@@ -1,10 +1,28 @@
 // @use "/Users/manueltorres/Documents/Brainstation_SE/manuel-torres-snaps/src/styles/partials.scss/_variables.scss";
-@use "./styles/partials/_variables.scss";
+@use "./styles/partials/variables";
+@use "./styles/partials/mixins" as *;
+// @use "/Users/manueltorres/Documents/Brainstation_SE/manuel-torres-snaps/src/components/Header/Header.scss";
 
 html,
 body {
   margin: 0;
   padding: 0;
-  // background-color: pu;
   font-family: variables.$newsReader-base;
+  background-color: variables.$pistachio;
+}
+
+body {
+  margin: 0 variables.$mobile-OM;
+  @include tablet {
+    margin: 0 variables.$tablet-OM;
+  }
+
+  @include desktop {
+    // TODO: Adjust the auto field using REM here
+    margin: 0 auto;
+  }
+}
+
+#root {
+  width: 100%;
 }

@@ -1,0 +1,35 @@
+// @use "/Users/manueltorres/Documents/Brainstation_SE/manuel-torres-snaps/src/components/Header/Header.scss";
+// @use "./src/styles/partials/variables";
+// @use "/Users/manueltorres/Documents/Brainstation_SE/manuel-torres-snaps/src/styles/partials/_variables.scss";
+@use "../../styles/partials/variables" as v;
+@use "../../styles/partials/button";
+@use "../../styles/partials/mixins" as *;
+
+.nav {
+  position: sticky;
+  font-family: v.$newsReader-base;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__header {
+    @include wordMark-style;
+    width: 70%;
+  }
+
+  &__icon {
+    padding-left: 8px;
+    fill: red;
+
+    // TODO adjust the hover and make this work correctly
+    path {
+      // fill: purple;
+    }
+    path:hover {
+      color: white !important;
+    }
+    icon:hover {
+      fill: #000;
+    }
+  }
+}

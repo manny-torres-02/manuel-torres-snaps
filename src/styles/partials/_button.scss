@@ -1,0 +1,26 @@
+@use "./variables" as v;
+@use "./mixins" as *;
+.nav {
+  &__button {
+    background-color: v.$white;
+    color: v.$forestGreen;
+    height: 24px;
+    border: 2px solid v.$forestGreen;
+    border-radius: 20px;
+    height: 20px;
+    padding: 8px 16px;
+    width: 50%;
+    height: 2rem;
+    // @include body-style(font-size: 34px;);
+    @include body-style($font-size: 16px);
+    @include tablet {
+      padding: 11px 22px;
+    }
+  }
+
+  &__button:hover {
+    background-color: v.$forestGreen;
+    color: v.$white;
+    // fill: red;
+  }
+}
