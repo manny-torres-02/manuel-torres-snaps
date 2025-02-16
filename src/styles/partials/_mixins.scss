@@ -1,0 +1,94 @@
+@use "./variables";
+
+@mixin title-style(
+  $font-family: variables.$newsReader-base,
+  $font-size,
+  $line-height,
+  $font-weight,
+  $font-style
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin heading-style(
+  $font-family,
+  $font-size,
+  $line-height,
+  $font-weight,
+  $font-style
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin body-style(
+  $font-family,
+  $font-size,
+  $line-height,
+  $font-weight,
+  $font-style
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin small-body-style(
+  $font-family,
+  $font-size,
+  $line-height,
+  $font-weight,
+  $font-style
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+@mixin label-style(
+  $font-family,
+  $font-size,
+  $line-height,
+  $font-weight,
+  $font-style
+) {
+  font-family: $font-family;
+  font-size: $font-size;
+  line-height: $line-height;
+  font-weight: $font-weight;
+  font-style: $font-style;
+}
+
+// // mediaqueries
+$mobile-breakpoint: 767px;
+$tablet-breakpoint: 768px;
+$desktop-breakpoint: 1280px;
+
+@mixin mobile {
+  @media (max-width: $mobile-breakpoint) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
+  }
+}

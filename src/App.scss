@@ -1,0 +1,10 @@
+// @use "/Users/manueltorres/Documents/Brainstation_SE/manuel-torres-snaps/src/styles/partials.scss/_variables.scss";
+@use "./styles/partials/_variables.scss";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  // background-color: pu;
+  font-family: variables.$newsReader-base;
+}

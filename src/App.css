@@ -1,42 +1,37 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* Type Kit */
+@font-face {
+  font-family: "Newsreader-light";
+  src: url("./src/assets/fonts/Newsreader-Light.woff"), format("woff") url("./src/assets/fonts/Alternative Files/Newsreader-Light.woff2") formtat("woff2");
+  font-weight: "light";
+  font-style: "normal";
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+@font-face {
+  font-family: "Newsreader-lightItalic";
+  src: url("./src/assets/fonts/Newsreader-LightItalic.woff"), format("woff") url("./src/assets/fonts/Alternative Files/Newsreader-LightItalic.woff2") formtat("woff2");
+  font-weight: "light";
+  font-style: "italic";
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+@font-face {
+  font-family: "Newsreader-Regular";
+  src: url("./src/assets/fonts/Newsreader-Regular.woff"), format("woff") url("./src/assets/fonts/Alternative Files/Newsreader-Regular.woff2") formtat("woff2");
+  font-weight: "normal";
+  font-style: "normal";
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+@font-face {
+  font-family: "OutFit-medium";
+  src: url("./src/assets/fonts/Alternative Files/Outfit-Medium.woff2"), format("woff") url("./src/assets/fonts/Alternative Files/Outfit-Medium.woff2") formtat("woff2");
+  font-weight: "normal";
+  font-style: "normal";
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+@font-face {
+  font-family: "Outfit-light";
+  src: url("./src/assets/fonts/Outfit-Light.woff"), format("woff") url("./src/assets/fonts/Alternative Files/Outfit-Light.woff2") formtat("woff2");
+  font-weight: "light";
+  font-style: "normal";
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Newsreader-Regular", sans-serif;
+}/*# sourceMappingURL=App.css.map */

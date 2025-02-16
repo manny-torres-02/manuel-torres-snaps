@@ -1,0 +1,132 @@
+/* Type Kit */
+// Fonts
+@font-face {
+  font-family: "Newsreader-light";
+  src: url("./src/assets/fonts/Newsreader-Light.woff"),
+    format("woff")
+      url("./src/assets/fonts/Alternative Files/Newsreader-Light.woff2")
+      formtat("woff2");
+  font-weight: "light";
+  font-style: "normal";
+}
+
+@font-face {
+  font-family: "Newsreader-lightItalic";
+  src: url("./src/assets/fonts/Newsreader-LightItalic.woff"),
+    format("woff")
+      url("./src/assets/fonts/Alternative Files/Newsreader-LightItalic.woff2")
+      formtat("woff2");
+  font-weight: "light";
+  font-style: "italic";
+}
+
+@font-face {
+  font-family: "Newsreader-Regular";
+  src: url("./src/assets/fonts/Newsreader-Regular.woff"),
+    format("woff")
+      url("./src/assets/fonts/Alternative Files/Newsreader-Regular.woff2")
+      formtat("woff2");
+  font-weight: "normal";
+  font-style: "normal";
+}
+
+@font-face {
+  font-family: "OutFit-medium";
+  src: url("./src/assets/fonts/Alternative Files/Outfit-Medium.woff2"),
+    format("woff")
+      url("./src/assets/fonts/Alternative Files/Outfit-Medium.woff2")
+      formtat("woff2");
+  font-weight: "normal"; //is this normal or bold? style sheet looks to be bold
+  font-style: "normal";
+}
+
+@font-face {
+  font-family: "Outfit-light";
+  src: url("./src/assets/fonts/Outfit-Light.woff"),
+    format("woff")
+      url("./src/assets/fonts/Alternative Files/Outfit-Light.woff2")
+      formtat("woff2");
+  font-weight: "light";
+  font-style: "normal";
+}
+
+$newsReader-base: "Newsreader-Regular", sans-serif;
+$newsReader-light: "Newsreader-Regular", sans-serif;
+$newsReader-lightItalic: "Newsreader-Regular", sans-serif;
+$outfit-medium: "Newsreader-Regular", sans-serif;
+$outfit-light: "Newsreader-Regular", sans-serif;
+
+$FW-normal: "regular";
+$FW-light: 300;
+
+//  Mobile Text Styles
+// WordMark
+$wordMark_mobile-font-size: 32px;
+$wordMark_mobile-lineHeight: 32px;
+// $wordMark_mobile-font-weight: "regular";
+
+$wordMark-font-size: 40px;
+$wordMark_mobile-lineHeight: 40px;
+// $wordMark_mobile-font-weight: "regular";
+
+// Title
+$title_mobile-font-size: 26px;
+$title_mobile-line-height: 38px;
+//FW light - 300
+//normal or italic
+
+$title-font-size: 52px;
+$title-line-height: 66px;
+//fw 300
+//normal or italic
+
+// Heading
+$heading_mobile-font-size: 18px;
+$heading_mobile-line-height: 23px;
+//fw 500
+
+$heading-font-size: 24px;
+$heading-line-height: 30px;
+//fw 500
+
+// Body
+$body_mobile-font-size: 12px;
+$body_mobile-line-height: 15px;
+//fw 500 or 300
+
+$body-font-size: 20px;
+$body-line-height: 26px;
+//fw 500 or 300
+
+// SmallBody
+$small-body_mobile-font-size: 10px;
+$smallbody_mobile-line-height: 12px;
+//fw 500
+
+$body-font-size: 12px;
+$body-line-height: 15px;
+//fw 500
+
+// Colors
+// Primary
+$black: #0c1e1a;
+$ForestGreen: #1e6655;
+$Pistachio: #effaf7;
+
+//Secondary
+$SeaGreen: #b7cec9;
+$Sage: #e4efec;
+$White: #ffffff;
+
+// gutters
+$mobile-g: 16px;
+$tablet-g: 24px;
+$desktop-g: 24px; 
+
+// Margin
+$mobile-OM: 16px;
+$tablet-OM: 24px;
+// Desktop auto;
+
+//Columns
+$desktop-columns: 80px; 
