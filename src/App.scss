@@ -19,7 +19,7 @@ body {
 
   @include desktop {
     // TODO: Adjust the auto field using REM here
-    margin: 0 auto;
+    margin: 0 variables.$tablet-OM;
   }
 }
 

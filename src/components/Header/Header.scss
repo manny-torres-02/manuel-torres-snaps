@@ -25,11 +25,13 @@
     path {
       // fill: purple;
     }
-    path:hover {
-      color: white !important;
-    }
-    icon:hover {
-      fill: #000;
-    }
+    // :hover {
+    //   fill: white !important;
+    // }
+    // &__icon
   }
+}
+
+path:hover {
+  fill: #000;
 }

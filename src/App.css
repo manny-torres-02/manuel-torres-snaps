@@ -46,7 +46,7 @@ body {
 }
 @media (min-width: 1280px) {
   body {
-    margin: 0 auto;
+    margin: 0 24px;
   }
 }
 
