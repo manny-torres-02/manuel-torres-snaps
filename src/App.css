@@ -38,6 +38,10 @@ body {
 
 body {
   margin: 0 16px;
+  font-family: "Newsreader-Regular", sans-serif;
+  font-size: 12px;
+  line-height: 26px;
+  font-weight: 500;
 }
 @media (min-width: 768px) {
   body {

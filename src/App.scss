@@ -13,6 +13,7 @@ body {
 
 body {
   margin: 0 variables.$mobile-OM;
+  @include body-style;
   @include tablet {
     margin: 0 variables.$tablet-OM;
   }
