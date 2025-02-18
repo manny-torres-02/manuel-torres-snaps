@@ -1,10 +1,13 @@
-const Card = ({ id, photoDescription, index }) => {
+const Card = ({ photoDescription, photo, photographer, tags }) => {
   return (
     <>
       <div>
-        <h1>{id}</h1>
-        <p>{photoDescription}</p>
-        test
+        <img src={photo} alt={photoDescription} />
+        <p> {photographer}</p>
+        {/* Work through the tags
+        TODO: format, use join or something to add in commas */}
+        <p>{tags}</p>
+        {/* <p>{photoDescription}</p> */}
       </div>
     </>
   );
