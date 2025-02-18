@@ -1,8 +1,18 @@
-
+import "./Hero.css";
 const Hero = () => {
   return (
     <>
-      <p>test</p>
+      <div className="introduction">
+        <p className="introduction__mission">Our Mission:</p>
+        <p className="introduction__text">
+          Provide photographers a space to share photos of the neighborhoods
+          they cherish,
+          {/* Revisit the naming structure here for BEM */}
+          <span className="introduction__text-italic">
+            &nbsp;expressed in their unique style.
+          </span>
+        </p>
+      </div>
     </>
   );
 };
