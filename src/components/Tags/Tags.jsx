@@ -1,7 +1,10 @@
-const Tags = (name) => {
-  <>
-    <button>{name}</button>
-  </>;
+const Tags = ({ name }) => {
+  return (
+    <>
+      {/* <button>{name}</button> */}
+      <button>{name}</button>
+    </>
+  );
 };
 
 export default Tags;
