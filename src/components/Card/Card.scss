@@ -1,0 +1,40 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.card {
+  background-color: $sage;
+  border-radius: 25px;
+  border: 1px solid $seaGreen;
+  width: 300px;
+  height: 300px;
+
+  &__image {
+    // height: inherit;
+    width: inherit;
+    border-radius: 25px 25px 0 0;
+  }
+
+  &__photographer {
+    background-color: $sage;
+    width: 100px;
+    top: -35px;
+    position: relative;
+    margin: 0 0 0 auto;
+    border: 1px solid $forestGreen;
+    // TODO: correct the width and the spacing
+    text-align: end;
+  }
+
+  &__tags {
+    position: relative;
+    margin: auto 0;
+    top: -10px;
+  }
+}
+
+// &__data-wrapper {
+//   * {
+//     margin: 0;
+//   }
+// }
+// }

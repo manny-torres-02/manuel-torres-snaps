@@ -1,43 +1,43 @@
 /* Type Kit */
 // Fonts
 @font-face {
-  font-family: "Newsreader-light";
+  font-family: "Newsreader";
   src: url("./src/assets/fonts/Newsreader-Light.woff"),
     format("woff")
       url("./src/assets/fonts/Alternative Files/Newsreader-Light.woff2")
       formtat("woff2");
-  font-weight: "light";
-  font-style: "normal";
-}
-
-@font-face {
-  font-family: "Newsreader-lightItalic";
-  src: url("./src/assets/fonts/Newsreader-LightItalic.woff"),
-    format("woff")
-      url("./src/assets/fonts/Alternative Files/Newsreader-LightItalic.woff2")
-      formtat("woff2");
-  font-weight: "light";
-  font-style: "italic";
-}
-
-@font-face {
-  font-family: "Newsreader-Regular";
-  src: url("./src/assets/fonts/Newsreader-Regular.woff"),
-    format("woff")
-      url("./src/assets/fonts/Alternative Files/Newsreader-Regular.woff2")
-      formtat("woff2");
-  font-weight: 900;
+  // font-weight: "light";
   // font-style: "normal";
 }
 
 @font-face {
-  font-family: "OutFit-medium";
+  font-family: "Newsreader";
+  src: url("./src/assets/fonts/Newsreader-LightItalic.woff"),
+    format("woff")
+      url("./src/assets/fonts/Alternative Files/Newsreader-LightItalic.woff2")
+      formtat("woff2");
+  // font-weight: "light";
+  // font-style: "italic";
+}
+
+@font-face {
+  font-family: "Newsreader";
+  src: url("./src/assets/fonts/Newsreader-Regular.woff"),
+    format("woff")
+      url("./src/assets/fonts/Alternative Files/Newsreader-Regular.woff2")
+      formtat("woff2");
+  // font-weight: 900;
+  // font-style: "normal";
+}
+
+@font-face {
+  font-family: "OutFit";
   src: url("./src/assets/fonts/Alternative Files/Outfit-Medium.woff2"),
     format("woff")
       url("./src/assets/fonts/Alternative Files/Outfit-Medium.woff2")
       formtat("woff2");
-  font-weight: "normal"; //is this normal or bold? style sheet looks to be bold
-  font-style: "normal";
+  // font-weight: "normal"; //is this normal or bold? style sheet looks to be bold
+  // font-style: "normal";
 }
 
 @font-face {
@@ -46,8 +46,8 @@
     format("woff")
       url("./src/assets/fonts/Alternative Files/Outfit-Light.woff2")
       formtat("woff2");
-  font-weight: "light";
-  font-style: "normal";
+  // font-weight: "light";
+  // font-style: "normal";
 }
 
 $newsReader-base: "Newsreader-Regular", sans-serif;

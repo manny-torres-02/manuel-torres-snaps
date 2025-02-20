@@ -1,32 +1,23 @@
 /* Type Kit */
 @font-face {
-  font-family: "Newsreader-light";
+  font-family: "Newsreader";
   src: url("./src/assets/fonts/Newsreader-Light.woff"), format("woff") url("./src/assets/fonts/Alternative Files/Newsreader-Light.woff2") formtat("woff2");
-  font-weight: "light";
-  font-style: "normal";
 }
 @font-face {
-  font-family: "Newsreader-lightItalic";
+  font-family: "Newsreader";
   src: url("./src/assets/fonts/Newsreader-LightItalic.woff"), format("woff") url("./src/assets/fonts/Alternative Files/Newsreader-LightItalic.woff2") formtat("woff2");
-  font-weight: "light";
-  font-style: "italic";
 }
 @font-face {
-  font-family: "Newsreader-Regular";
+  font-family: "Newsreader";
   src: url("./src/assets/fonts/Newsreader-Regular.woff"), format("woff") url("./src/assets/fonts/Alternative Files/Newsreader-Regular.woff2") formtat("woff2");
-  font-weight: 900;
 }
 @font-face {
-  font-family: "OutFit-medium";
+  font-family: "OutFit";
   src: url("./src/assets/fonts/Alternative Files/Outfit-Medium.woff2"), format("woff") url("./src/assets/fonts/Alternative Files/Outfit-Medium.woff2") formtat("woff2");
-  font-weight: "normal";
-  font-style: "normal";
 }
 @font-face {
   font-family: "Outfit-light";
   src: url("./src/assets/fonts/Outfit-Light.woff"), format("woff") url("./src/assets/fonts/Alternative Files/Outfit-Light.woff2") formtat("woff2");
-  font-weight: "light";
-  font-style: "normal";
 }
 html,
 body {

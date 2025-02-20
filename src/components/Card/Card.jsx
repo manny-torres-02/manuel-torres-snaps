@@ -1,13 +1,17 @@
+import "./Card.css";
+
 const Card = ({ photoDescription, photo, photographer, tags }) => {
   return (
     <>
-      <div>
-        <img src={photo} alt={photoDescription} />
-        <p> {photographer}</p>
+      <div className="card">
+        <img className="card__image" src={photo} alt={photoDescription} />
+        {/* <div className="card__data-wrapper"> */}
+        <p className="card__photographer"> {photographer}</p>
         {/* Work through the tags
         TODO: format, use join or something to add in commas */}
-        <p>{tags}</p>
-        {/* <p>{photoDescription}</p> */}
+        
+        <p className="card__tags">{tags}</p>
+        {/* </div> */}
       </div>
     </>
   );
