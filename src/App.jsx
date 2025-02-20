@@ -6,10 +6,12 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Hero from "./components/Hero/Hero";
 import Gallery from "./components/Gallery/Gallery";
+import FilterTags from "./components/FilterTags/FilterTags";
 function App() {
   return (
     <>
       <Header />
+      <FilterTags />
       <Hero />
       <Gallery />
       <Footer />

@@ -3,7 +3,7 @@ import Card from "../Card/Card";
 import ImageData from "/Users/manueltorres/Documents/Brainstation_SE/manuel-torres-snaps/src/data/photos.json";
 import "./Gallery.css";
 let data = ImageData;
-console.log(data);
+// console.log(data);
 const Gallery = () => {
   return (
     <>
