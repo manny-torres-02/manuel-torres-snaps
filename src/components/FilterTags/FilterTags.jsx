@@ -5,13 +5,14 @@ import TagData from "/Users/manueltorres/Documents/Brainstation_SE/manuel-torres
 // console.log(TagData);
 const FilterTags = () => {
   return (
-    <><div className="filterTags">
-      <p>Filters</p>
-      <div>
-        {TagData.map((tag, index) => (
-          <Tag name={tag} key={index} />
-        ))}
-      </div>
+    <>
+      <div className="Tags_Wrapper">
+        <p>Filters</p>
+        <div>
+          {TagData.map((tag, index) => (
+            <Tag name={tag} key={index} />
+          ))}
+        </div>
       </div>
     </>
   );
