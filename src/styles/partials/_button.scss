@@ -23,4 +23,12 @@
       fill: v.$white;
     }
   }
+
+  &__button--active {
+    background-color: v.$forestGreen;
+    color: v.$white;
+    // fill: red;
+    .nav__icon path {
+      fill: v.$white;
+    }
 }

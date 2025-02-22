@@ -11,17 +11,17 @@ import FilterTags from "./components/FilterTags/FilterTags";
 
 function App() {
   const [showTags, setShowTags] = useState(false);
-  function filterClick() {
-    
+  function handleFilterClick() {
+    setShowTags(!showTags);
     console.log("test");
   }
-  filterClick();
+  // filterClick();
   // console.log("test");
   return (
     <>
-      <Header />
+      <Header handleFilterClick={handleFilterClick} />
       <div className="App-Wrapper">
-        <FilterTags />
+        <FilterTags showTags={showTags} setShowTags={setShowTags} />
         <Hero />
         <Gallery />
       </div>
