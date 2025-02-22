@@ -4,23 +4,23 @@
   &__button {
     background-color: v.$white;
     color: v.$forestGreen;
-    height: 24px;
     border: 2px solid v.$forestGreen;
     border-radius: 20px;
-    height: 20px;
-    padding: 8px 16px;
-    width: 50%;
-    height: 2rem;
-    // @include body-style(font-size: 34px;);
+    // box-sizing: border-box;
+    box-sizing: content-box;
     @include body-style($font-size: 16px);
     @include tablet {
-      padding: 11px 22px;
+      padding: 5.5px 22px;
+      // padding: 20px;
     }
   }
 
   &__button:hover {
     background-color: v.$forestGreen;
     color: v.$white;
-    fill: red;
+    // fill: red;
+    .nav__icon path {
+      fill: v.$white;
+    }
   }
 }

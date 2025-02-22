@@ -10,15 +10,21 @@ import Gallery from "./components/Gallery/Gallery";
 import FilterTags from "./components/FilterTags/FilterTags";
 
 function App() {
+  const [showTags, setShowTags] = useState(false);
+  function filterClick() {
+    
+    console.log("test");
+  }
+  filterClick();
+  // console.log("test");
   return (
     <>
-      {/* <Tags /> */}
       <Header />
-      <FilterTags />
-      <Hero />
-
-      {/* <Tags /> */}
-      <Gallery />
+      <div className="App-Wrapper">
+        <FilterTags />
+        <Hero />
+        <Gallery />
+      </div>
       <Footer />
     </>
   );

@@ -6,7 +6,7 @@ import TagData from "/Users/manueltorres/Documents/Brainstation_SE/manuel-torres
 const FilterTags = () => {
   return (
     <>
-      <div className="Tags_Wrapper">
+      <div className="tags__wrapper tags__wrapper--inactive">
         <p>Filters</p>
         <div>
           {TagData.map((tag, index) => (

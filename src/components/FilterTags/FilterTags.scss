@@ -1,6 +1,13 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.filterTags {
+.tags__wrapper {
   background-color: $sage;
+  &--active {
+    display: block;
+  }
+
+  &--inactive {
+    display: none;
+  }
 }

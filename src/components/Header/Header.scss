@@ -20,18 +20,5 @@
   &__icon {
     padding-left: 8px;
     fill: red;
-
-    // TODO adjust the hover and make this work correctly
-    path {
-      // fill: purple;
-    }
-    // :hover {
-    //   fill: white !important;
-    // }
-    // &__icon
   }
-}
-
-path:hover {
-  fill: #000;
 }
