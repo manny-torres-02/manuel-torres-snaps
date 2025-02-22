@@ -3,7 +3,7 @@ const Tags = ({ name }) => {
   return (
     <>
       {/* <button>{name}</button> */}
-      <button className="filterTags">{name}</button>
+      <button className="tags">{name}</button>
     </>
   );
 };

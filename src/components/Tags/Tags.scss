@@ -2,26 +2,33 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.filterTags {
+.tags {
   box-sizing: content-box;
   background-color: $white;
   color: $forestGreen;
-  height: 24px;
   border: 2px solid $forestGreen;
-  border-radius: 20px;
-  height: 20px;
-  padding: 8px 16px;
-  // width: 50%;
-  height: 2rem;
-  // @include body-style(font-size: 34px;);
+  border-radius: 6px;
+  padding: 6px 8px;
+  margin: 4px;
+
+  &:hover {
+    color: $white;
+    background-color: $forestGreen;
+  }
+
   @include body-style($font-size: 16px);
   @include tablet {
-    padding: 11px 22px;
+    padding: 8px 12px;
+    border-readius: 12px;
+  }
+
+  &--active {
+    color: $white;
+    background-color: $forestGreen;
   }
 }
 
-// &__button:hover {
-//   background-color: v.$forestGreen;
-//   color: v.$white;
-//   fill: red;
-// }
+.nonClickable {
+  color: black;
+  border: 1px solid $seaGreen;
+}
