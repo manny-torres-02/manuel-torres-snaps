@@ -8,6 +8,8 @@
   align-items: center;
 
   &__header {
+    margin: 0;
+    padding: 24px;
     @include wordMark-style(
       // $font-size: v.$wordMark-font-size,
       // $line-height: v.$wordMark-lineHeight
