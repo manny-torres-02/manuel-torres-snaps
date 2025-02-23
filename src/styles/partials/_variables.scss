@@ -31,7 +31,7 @@
 }
 
 @font-face {
-  font-family: "OutFit";
+  font-family: "outfit";
   src: url("./src/assets/fonts/Alternative Files/Outfit-Medium.woff2"),
     format("woff")
       url("./src/assets/fonts/Alternative Files/Outfit-Medium.woff2")
@@ -41,7 +41,7 @@
 }
 
 @font-face {
-  font-family: "Outfit-light";
+  font-family: "outfit";
   src: url("./src/assets/fonts/Outfit-Light.woff"),
     format("woff")
       url("./src/assets/fonts/Alternative Files/Outfit-Light.woff2")
@@ -50,11 +50,11 @@
   // font-style: "normal";
 }
 
-$newsReader-base: "Newsreader-Regular", sans-serif;
-$newsReader-light: "Newsreader-light", sans-serif;
-$newsReader-lightItalic: "Newsreader-lightItalic", sans-serif;
-$outfit-medium: "outfit-medium", sans-serif;
-$outfit-light: "Outfit-light", sans-serif;
+$newsReader: "Newsreader", sans-serif;
+// $newsReader-light: "Newsreader-light", sans-serif;
+// $newsReader-lightItalic: "Newsreader-lightItalic", sans-serif;
+$outfit: "outfit", sans-serif;
+// $outfit-light: "Outfit-light", sans-serif;
 
 $FW-normal: 400;
 $FW-light: 300;

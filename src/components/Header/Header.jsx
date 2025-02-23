@@ -7,7 +7,7 @@ const Header = ({ handleFilterClick }) => {
       <nav className="nav">
         <h1 className="nav__header">Snaps</h1>
         <button onClick={handleFilterClick} className="nav__button">
-          Filter
+          Filters
           <FilterIcon className="nav__icon" />
         </button>
       </nav>
