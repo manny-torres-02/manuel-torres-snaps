@@ -9,7 +9,12 @@ const FilterTags = ({ setShowTags, showTags, setSelectedTag, selectedTag }) => {
   // update the tag
   const handleTagClick = (tag) => {
     console.log(tag);
-    setSelectedTag(tag);
+    if (selectedTag === tag) {
+      console.log("the tag and selected tag are the same ");
+      setSelectedTag(null);
+    } else {
+      setSelectedTag(tag);
+    }
   };
 
   return (

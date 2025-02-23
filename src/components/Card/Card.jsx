@@ -9,8 +9,12 @@ const Card = ({ photoDescription, photo, photographer, tags }) => {
         <p className="card__photographer"> {photographer}</p>
         {/* Work through the tags
         TODO: format, use join or something to add in commas */}
-        
-        <p className="card__tags">{tags}</p>
+
+        {tags.map((tag, index) => (
+          <p className="card__tags" key={index}>
+            {tag}
+          </p>
+        ))}
         {/* </div> */}
       </div>
     </>
