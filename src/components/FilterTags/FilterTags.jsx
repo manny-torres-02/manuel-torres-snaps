@@ -4,16 +4,30 @@ import TagData from "/Users/manueltorres/Documents/Brainstation_SE/manuel-torres
 
 import { useState } from "react";
 const FilterTags = ({ setShowTags, showTags }) => {
-  const [tagActive, setTagActive] = 
+  //create state for the tag
+  const [selectedTag, setSelectedTag] = useState(null);
+
+  // update the tag
+  const handleTagClick = (tag) => {
+    console.log(tag)
+    setSelectedTag(tag);
+  };
+
   return (
     <>
       {showTags && (
-        <div className={`tags__wrapper`}>
-          <p>Filters</p>
+        <div className="tags-wrapper">
+          <h1 className="tags-wrapper__title">Filters</h1>
 
           <div>
             {TagData.map((tag, index) => (
-              <Tag name={tag} key={index} isVisible={showTags} />
+              <Tag
+                name={tag}
+                key={index}
+                isVisible={showTags}
+                onClick={() => handleTagClick(tag)}
+                isSelected={selectedTag === tag}
+              />
             ))}
           </div>
         </div>

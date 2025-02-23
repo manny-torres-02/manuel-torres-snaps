@@ -1,13 +1,20 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.tags__wrapper {
+.tags-wrapper {
   background-color: $sage;
   // &--active {
   //   display: block;
   // }
-
+  // TODO: ADJUST THE BOTTOM PADDING
+  padding: 56px 0;
   &--inactive {
     display: none;
+  }
+  &__title {
+    font-size: $wordMark-font-size;
+    line-height: $wordMark-lineHeight;
+    padding-bottom: 36px;
+    margin: 0;
   }
 }

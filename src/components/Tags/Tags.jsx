@@ -1,9 +1,14 @@
 import "./Tags.css";
-const Tags = ({ name }) => {
+const Tags = ({ isSelected, name, onClick }) => {
   return (
     <>
       {/* <button>{name}</button> */}
-      <button className="tags">{name}</button>
+      <button
+        className={`tags ${isSelected ? "tags--active" : ""}`}
+        onClick={onClick}
+      >
+        {name}
+      </button>
     </>
   );
 };
