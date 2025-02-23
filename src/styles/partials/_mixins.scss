@@ -84,17 +84,17 @@
 }
 
 @mixin generalFontStyle(
-  $font-family: variables.$newsReader-base,
+  $font-family: variables.$newsReader,
   $font-size: variables.$small-body_mobile-font-size,
   $line-height: variables.$small-body-line-height,
   $font-weight: variables.$FW-500,
-  $font-style: variables.$FW-normal
+  // $font-style: variables.$FW-normal
 ) {
   font-family: $font-family;
   font-size: $font-size;
   line-height: $line-height;
   font-weight: $font-weight;
-  font-style: $font-style;
+  // font-style: $font-style;s
 }
 
 // // mediaqueries

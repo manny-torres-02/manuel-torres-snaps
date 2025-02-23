@@ -3,18 +3,33 @@
 
 .tags-wrapper {
   background-color: $sage;
+  width: 100%;
+  // TODO ADJUST PADDING ABOVE AND BLOW THIS ITEM
+  padding: 56px 16px;
+
+  @include desktop {
+    flex: 1;
+    order: 2;
+    width: 33%;
+  }
   // &--active {
   //   display: block;
   // }
   // TODO: ADJUST THE BOTTOM PADDING
-  padding: 56px 0;
+  // padding: 56px 0;
   &--inactive {
     display: none;
   }
   &__title {
-    font-size: $wordMark-font-size;
-    line-height: $wordMark-lineHeight;
+    font-size: $title_mobile-font-size;
+    line-height: $title_mobile-line-height;
     padding-bottom: 36px;
     margin: 0;
+    font-family: $outfit;
+    font-weight: 500;
+    @include tablet {
+      font-size: $wordMark_mobile-font-size;
+      line-height: $wordMark-lineHeight;
+    }
   }
 }

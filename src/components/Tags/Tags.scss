@@ -1,25 +1,26 @@
-// @use "./src/styles/partials/_button.scss";
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
 .tags {
-  box-sizing: content-box;
   background-color: $white;
   color: $forestGreen;
+  font-size: $heading_mobile-font-size;
+  line-height: $heading_mobile-line-height;
   border: 2px solid $forestGreen;
   border-radius: 6px;
   padding: 6px 8px;
   margin: 6px;
+  font-family: $outfit;
 
   &:hover {
     color: $white;
     background-color: $forestGreen;
   }
 
-  @include body-style($font-size: 16px);
+  // @include body-style($font-size: 16px);
   @include tablet {
     padding: 8px 12px;
-    border-readius: 12px;
+    border-radius: 12px;
   }
 
   &--active {

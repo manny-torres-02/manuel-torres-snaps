@@ -5,9 +5,9 @@
   src: url("./src/assets/fonts/Newsreader-Light.woff"),
     format("woff")
       url("./src/assets/fonts/Alternative Files/Newsreader-Light.woff2")
-      formtat("woff2");
-  // font-weight: "light";
-  // font-style: "normal";
+      format("woff2");
+  font-weight: 100;
+  font-style: "normal";
 }
 
 @font-face {
@@ -15,9 +15,9 @@
   src: url("./src/assets/fonts/Newsreader-LightItalic.woff"),
     format("woff")
       url("./src/assets/fonts/Alternative Files/Newsreader-LightItalic.woff2")
-      formtat("woff2");
-  // font-weight: "light";
-  // font-style: "italic";
+      format("woff2");
+  font-weight: 300;
+  font-style: italic;
 }
 
 @font-face {
@@ -25,9 +25,9 @@
   src: url("./src/assets/fonts/Newsreader-Regular.woff"),
     format("woff")
       url("./src/assets/fonts/Alternative Files/Newsreader-Regular.woff2")
-      formtat("woff2");
-  // font-weight: 900;
-  // font-style: "normal";
+      format("woff2");
+  font-weight: 400;
+  font-style: normal;
 }
 
 @font-face {
@@ -35,9 +35,9 @@
   src: url("./src/assets/fonts/Alternative Files/Outfit-Medium.woff2"),
     format("woff")
       url("./src/assets/fonts/Alternative Files/Outfit-Medium.woff2")
-      formtat("woff2");
-  // font-weight: "normal"; //is this normal or bold? style sheet looks to be bold
-  // font-style: "normal";
+      format("woff2");
+  font-weight: 500; //is this normal or bold? style sheet looks to be bold
+  font-style: "normal";
 }
 
 @font-face {
@@ -45,16 +45,14 @@
   src: url("./src/assets/fonts/Outfit-Light.woff"),
     format("woff")
       url("./src/assets/fonts/Alternative Files/Outfit-Light.woff2")
-      formtat("woff2");
-  // font-weight: "light";
-  // font-style: "normal";
+      format("woff2");
+  font-weight: 300;
+  font-style: normal;
 }
 
 $newsReader: "Newsreader", sans-serif;
-// $newsReader-light: "Newsreader-light", sans-serif;
-// $newsReader-lightItalic: "Newsreader-lightItalic", sans-serif;
+$newsReaderLight: "Newsreader", sans-serif;
 $outfit: "outfit", sans-serif;
-// $outfit-light: "Outfit-light", sans-serif;
 
 $FW-normal: 400;
 $FW-light: 300;

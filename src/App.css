@@ -1,23 +1,33 @@
 /* Type Kit */
 @font-face {
   font-family: "Newsreader";
-  src: url("./src/assets/fonts/Newsreader-Light.woff"), format("woff") url("./src/assets/fonts/Alternative Files/Newsreader-Light.woff2") formtat("woff2");
+  src: url("./src/assets/fonts/Newsreader-Light.woff"), format("woff") url("./src/assets/fonts/Alternative Files/Newsreader-Light.woff2") format("woff2");
+  font-weight: 100;
+  font-style: "normal";
 }
 @font-face {
   font-family: "Newsreader";
-  src: url("./src/assets/fonts/Newsreader-LightItalic.woff"), format("woff") url("./src/assets/fonts/Alternative Files/Newsreader-LightItalic.woff2") formtat("woff2");
+  src: url("./src/assets/fonts/Newsreader-LightItalic.woff"), format("woff") url("./src/assets/fonts/Alternative Files/Newsreader-LightItalic.woff2") format("woff2");
+  font-weight: 300;
+  font-style: italic;
 }
 @font-face {
   font-family: "Newsreader";
-  src: url("./src/assets/fonts/Newsreader-Regular.woff"), format("woff") url("./src/assets/fonts/Alternative Files/Newsreader-Regular.woff2") formtat("woff2");
+  src: url("./src/assets/fonts/Newsreader-Regular.woff"), format("woff") url("./src/assets/fonts/Alternative Files/Newsreader-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
 }
 @font-face {
   font-family: "outfit";
-  src: url("./src/assets/fonts/Alternative Files/Outfit-Medium.woff2"), format("woff") url("./src/assets/fonts/Alternative Files/Outfit-Medium.woff2") formtat("woff2");
+  src: url("./src/assets/fonts/Alternative Files/Outfit-Medium.woff2"), format("woff") url("./src/assets/fonts/Alternative Files/Outfit-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: "normal";
 }
 @font-face {
   font-family: "outfit";
-  src: url("./src/assets/fonts/Outfit-Light.woff"), format("woff") url("./src/assets/fonts/Alternative Files/Outfit-Light.woff2") formtat("woff2");
+  src: url("./src/assets/fonts/Outfit-Light.woff"), format("woff") url("./src/assets/fonts/Alternative Files/Outfit-Light.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
 }
 html,
 body {
@@ -38,17 +48,20 @@ body {
   line-height: 15px;
   font-weight: 400;
 }
-body > * {
-  padding: 1.33rem;
-}
 @media (min-width: 768px) {
   body {
     font-size: 20px;
   }
-  body > * {
-    padding: 0 1.25rem;
+}
+@media (min-width: 1280px) {
+  .App-Wrapper {
+    display: flex;
   }
 }
-#root {
-  width: 100%;
+
+@media (min-width: 1280px) {
+  .Hero-Gallery-wrapper {
+    flex: 2;
+    order: 1;
+  }
 }/*# sourceMappingURL=App.css.map */

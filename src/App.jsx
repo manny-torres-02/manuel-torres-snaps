@@ -17,6 +17,10 @@ function App() {
 
   function handleFilterClick() {
     setShowTags(!showTags);
+
+    if (showTags === true) {
+      setSelectedTag(null);
+    }
     console.log("test");
   }
 
@@ -33,7 +37,7 @@ function App() {
           setSelectedTag={setSelectedTag}
           selectedTag={selectedTag}
         />
-        <div>
+        <div className="Hero-Gallery-wrapper">
           <Hero />
           <Gallery selectedTag={selectedTag} />
         </div>

@@ -16,7 +16,7 @@ body {
 
 body {
   & > * {
-    padding: 1.33rem;
+    // padding: 1.33rem;
   }
 
   @include body-style;
@@ -26,7 +26,7 @@ body {
     font-size: 20px;
 
     & > * {
-      padding: 0 1.25rem;
+      // padding: 0 1.25rem;
     }
   }
 
@@ -37,5 +37,18 @@ body {
 }
 
 #root {
-  width: 100%;
+  // width: 100%;
+}
+
+.App-Wrapper {
+  @include desktop {
+    display: flex;
+  }
+}
+
+.Hero-Gallery-wrapper {
+  @include desktop {
+    flex: 2;
+    order: 1;
+  }
 }

@@ -6,15 +6,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  // TODO: Adjust the REM for left and right
+  padding: 24px 1rem;
+
+  @include tablet {
+    padding: 24px 1.25rem;
+  }
 
   &__header {
     margin: 0;
-    padding: 24px;
+    // padding: 24px;
+    font-weight: 500;
     @include wordMark-style(
       // $font-size: v.$wordMark-font-size,
       // $line-height: v.$wordMark-lineHeight
     );
     @include tablet {
+      // padding: 2;
       @include wordMark-style(
         $font-size: v.$wordMark-font-size,
         $line-height: v.$wordMark-lineHeight
