@@ -1,15 +1,14 @@
 import "./FilterTags.css";
 import Tag from "../Tags/Tags";
 import TagData from "/Users/manueltorres/Documents/Brainstation_SE/manuel-torres-snaps/src/data/tags.json";
-
 import { useState } from "react";
-const FilterTags = ({ setShowTags, showTags }) => {
+
+const FilterTags = ({ setShowTags, showTags, setSelectedTag, selectedTag }) => {
   //create state for the tag
-  const [selectedTag, setSelectedTag] = useState(null);
 
   // update the tag
   const handleTagClick = (tag) => {
-    console.log(tag)
+    console.log(tag);
     setSelectedTag(tag);
   };
 
