@@ -7,8 +7,7 @@ const Footer = () => {
   return (
     <>
       <footer className="footer">
-        {/* <div class="footer__top-half-wrapper"> */}
-        <h1 className="footer__wordMark">Snaps</h1>
+        <p className="footer__wordMark">Snaps</p>
         <div className="footer__list-wrapper">
           <ul className="footer__list footer__list-one">
             <li>For photographers</li>
@@ -20,7 +19,6 @@ const Footer = () => {
             <li>Careers</li>
             <li>Support</li>
           </ul>
-          {/* </div> */}
         </div>
         <div className="footer__icon-list">
           <FacebookIcon className="footer__icon" />

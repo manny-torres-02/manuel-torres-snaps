@@ -13,7 +13,6 @@ function App() {
   const [showTags, setShowTags] = useState(false);
   const [selectedTag, setSelectedTag] = useState(null);
 
-  // const [tag, setTag] = useState()
 
   function handleFilterClick() {
     setShowTags(!showTags);
@@ -25,8 +24,7 @@ function App() {
   }
 
   function selectTag() {}
-  // filterClick();
-  // console.log("test");
+
   return (
     <>
       <Header handleFilterClick={handleFilterClick} />
@@ -36,10 +34,11 @@ function App() {
           setShowTags={setShowTags}
           setSelectedTag={setSelectedTag}
           selectedTag={selectedTag}
+          showFiltered={showTags}
         />
         <div className="Hero-Gallery-wrapper">
           <Hero />
-          <Gallery selectedTag={selectedTag} />
+          <Gallery selectedTag={selectedTag} showFiltered={showTags} />
         </div>
       </div>
       <Footer />

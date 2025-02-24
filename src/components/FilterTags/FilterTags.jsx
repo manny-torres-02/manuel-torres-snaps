@@ -3,10 +3,13 @@ import Tag from "../Tags/Tags";
 import TagData from "/Users/manueltorres/Documents/Brainstation_SE/manuel-torres-snaps/src/data/tags.json";
 import { useState } from "react";
 
-const FilterTags = ({ setShowTags, showTags, setSelectedTag, selectedTag }) => {
-  //create state for the tag
-
-  // update the tag
+const FilterTags = ({
+  setShowTags,
+  showTags,
+  setSelectedTag,
+  selectedTag,
+  
+}) => {
   const handleTagClick = (tag) => {
     console.log(tag);
     if (selectedTag === tag) {
@@ -22,7 +25,6 @@ const FilterTags = ({ setShowTags, showTags, setSelectedTag, selectedTag }) => {
       {showTags && (
         <div className="tags-wrapper">
           <h1 className="tags-wrapper__title">Filters</h1>
-
           <div>
             {TagData.map((tag, index) => (
               <Tag

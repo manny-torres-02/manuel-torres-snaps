@@ -2,45 +2,31 @@
 @use "../../styles/partials/mixins" as *;
 
 .footer {
-  // font-family: $outfit-medium;
-  // color: red;
   display: flex;
   flex-direction: column;
-
+  padding: 0 16px;
+  @include desktop {
+  }
   @include tablet {
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
+
     @include generalFontStyle(
-      $font-family: $newsReader-base,
+      $font-family: $newsReader,
       $font-size: $body-font-size,
-      $line-height: $body-line-height,
-      // $font-weight: FW-500,
-      // $font-style: FW-normal
+      $line-height: $body-line-height
     );
-    @include desktop {
-      // justify-content: space-around;
-    }
   }
 
   &__wordMark {
-    @include wordMark-style(
-      $font-size: $wordMark-font-size,
-      $line-height: $wordMark-lineHeight
-    );
-
-    @include tablet {
-      width: 45%;
-    }
-    @include desktop {
-      width: 30%;
-    }
+    @include wordMark-style();
   }
 
   &__list-wrapper {
     @include tablet {
       width: 45%;
       display: flex;
-      // flex: auto;
       justify-content: flex-end;
       padding-bottom: 150px;
     }
@@ -50,7 +36,7 @@
   }
 
   &__list {
-    font-family: $outfit-medium;
+    font-family: $outfit;
     list-style: none;
     padding: 0;
     padding-top: 8px;
@@ -89,15 +75,16 @@
       width: auto;
       margin-top: 27px;
       padding-top: 8px;
-      margin-left: auto;
-      margin-right: auto;
-      // align-items: right;
     }
   }
 
   &__icon {
-    height: 32px;
-    width: 32px;
+    height: 24px;
+    width: 24px;
+    @include tablet {
+      height: 32px;
+      width: 32px;
+    }
   }
 
   &__terms {

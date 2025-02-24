@@ -7,7 +7,6 @@ const Hero = () => {
         <p className="introduction__text">
           Provide photographers a space to share photos of the neighborhoods
           they cherish,
-          {/* Revisit the naming structure here for BEM */}
           <span className="introduction__text-italic">
             &nbsp;expressed in their unique style.
           </span>

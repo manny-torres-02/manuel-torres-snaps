@@ -7,28 +7,86 @@
   border: 1px solid $seaGreen;
   width: 300px;
   height: 300px;
+  margin-bottom: 24px;
+  // padding: 0 24px;
+  // margin: 24px;
+  border-radius: 8px 8px 0 0 ;
+
+  @include tablet {
+    // padding: 8px 12px;
+    border-radius: 12px;
+    width: 45%;
+  }
+
+  @include desktop {
+    // margin: auto auto;
+    width: 27%;
+    &__with-filters {
+      width: 40%;
+    }
+  }
 
   &__image {
     // height: inherit;
-    width: inherit;
-    border-radius: 25px 25px 0 0;
+    object-fit: cover;
+    height: 250px;
+    width: 100%;
+    border-radius: 8px 8px 0 0 ;
+
+    @include tablet{ 
+      border-radius: 8px 8px 0 0 ;
+    }
   }
 
   &__photographer {
-    background-color: $sage;
+    background-color: #e4efec;
+    font-family: $outfit;
     width: 100px;
-    top: -35px;
+    height: 25px;
+    top: -30px;
     position: relative;
     margin: 0 0 0 auto;
-    border: 1px solid $forestGreen;
-    // TODO: correct the width and the spacing
+    border-bottom: 0.5px solid #1e6655;
     text-align: end;
+    line-height: 25px;
+    border-radius: 5px 0 0 0;
+    padding-right: 8px;
+    @include tablet {
+      max-width: 100%;
+      // width: auto;
+      font-size: $small-body-font-size;
+      top: -28.5px;
+    }
+
+    @include desktop {
+      // font-size: ;
+    }
+  }
+
+  &__tag-wrapper {
+    display: flex;
+    // justify-content: center;
+    margin: auto;
+    position: relative;
+    bottom: 20px;
   }
 
   &__tags {
-    position: relative;
-    margin: auto 0;
-    top: -10px;
+    background-color: $white;
+    margin: 0 0 0 8px;
+    border: 2px solid $seaGreen;
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-family: $outfit;
+
+    @include tablet {
+      font-size: 12px;
+    }
+  }
+
+  .nonClickable {
+    color: black;
+    border: 1px solid $seaGreen;
   }
 }
 

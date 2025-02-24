@@ -5,9 +5,18 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  justify-content: space-between;
   max-width: 100%;
+  padding: 0 16px 48px 16px;
 
-  & card {
-    margin: 8px;
-  }
+  // &__with-filters {
+  //   width: 0;
+  //   // justify-content: flex-start;
+  // }
+
+  // @include desktop {
+  //   &__with-filters {
+  //     // width: 100%;
+  //   }
+  // }
 }

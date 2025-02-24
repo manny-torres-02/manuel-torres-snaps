@@ -4,97 +4,82 @@
   $font-family: variables.$newsReader,
   $font-size: variables.$wordMark_mobile-font-size,
   $line-height: variables.$wordMark_mobile-line-height,
-  $font-weight: variables.$FW-normal,
-  // $font-style
+  $font-weight: variables.$FW-normal
 ) {
   font-family: $font-family;
   font-size: $font-size;
   line-height: $line-height;
   font-weight: $font-weight;
-  // font-style: $font-style;
 }
 
 @mixin title-style(
   $font-family: variables.$newsReader-base,
   $font-size: variables.$title_mobile-font-size,
   $line-height: variables.$title_mobile-line-height,
-  $font-weight: variables.$FW-normal,
-  // $font-style
+  $font-weight: variables.$FW-normal
 ) {
   font-family: $font-family;
   font-size: $font-size;
   line-height: $line-height;
   font-weight: $font-weight;
-  // font-style: $font-style;
 }
 
 @mixin heading-style(
   $font-family: variables.$newsReader-base,
   $line-height: variables.$heading_mobile-line-height,
-  $font-weight: variables.$FW-500,
-  $font-style
+  $font-weight: variables.$FW-500
 ) {
   font-family: $font-family;
   font-size: $font-size;
   line-height: $line-height;
   font-weight: $font-weight;
-  font-style: $font-style;
 }
 
 @mixin body-style(
   $font-family: variables.$newsReader,
   $font-size: variables.$body_mobile-font-size,
   $line-height: variables.$body_mobile-line-height,
-  $font-weight: variables.$FW-normal,
-  // $font-style
+  $font-weight: variables.$FW-normal
 ) {
   font-family: $font-family;
   font-size: $font-size;
   line-height: $line-height;
   font-weight: $font-weight;
-  // font-style: $font-style;
 }
 
 @mixin small-body-style(
   $font-family: variables.$newsReader-base,
   $font-size: variables.$small-body_mobile-font-size,
   $line-height: variables.$small-body-line-height,
-  $font-weight: variables.$FW-500,
-  $font-style
+  $font-weight: variables.$FW-500
 ) {
   font-family: $font-family;
   font-size: $font-size;
   line-height: $line-height;
   font-weight: $font-weight;
-  font-style: $font-style;
 }
 
 @mixin label-style(
   $font-family: variables.$newsReader-base,
   $font-size: variables.$label_mobile-font-size,
-  $line-height: $label-body-line-height $font-weight,
-  //500
-  // $font-style
+  $line-height: $label-body-line-height $font-weight
 ) {
   font-family: $font-family;
   font-size: $font-size;
   line-height: $line-height;
   font-weight: $font-weight;
-  // font-style: $font-style;
 }
 
 @mixin generalFontStyle(
   $font-family: variables.$newsReader,
   $font-size: variables.$small-body_mobile-font-size,
   $line-height: variables.$small-body-line-height,
-  $font-weight: variables.$FW-500,
-  // $font-style: variables.$FW-normal
+  $font-weight: variables.$FW-500
 ) {
   font-family: $font-family;
   font-size: $font-size;
   line-height: $line-height;
   font-weight: $font-weight;
-  // font-style: $font-style;s
 }
 
 // // mediaqueries

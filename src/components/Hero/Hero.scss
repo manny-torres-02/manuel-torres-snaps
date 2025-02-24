@@ -3,10 +3,7 @@
 @use "../../styles/partials/mixins" as *;
 
 .introduction {
-  // TODO: Do I have to adjust the font styling shere? The font-weight doesnt really change
   font-family: v.$newsReader;
-  // TODO:
-  // Adjust top and bottom p[adding
   padding: 1rem;
 
   @include tablet {
@@ -17,49 +14,30 @@
     font-family: v.$outfit;
     @include tablet {
       font-size: v.$body-font-size;
-      // font-family: v.$newsReader;
     }
   }
 
   &__text {
-    // @include body-style(
-    //   // $font-family: v.$newsReader-light,
-    //   // $font-family: v.$newsReader,
-    //   $font-weight: 300,
-    //   $font-size: v.$heading-font-size,
-    //   // $font-size: 32px,
-    //   $line-height: v.$title_mobile-line-height
-    // );      $font-family: v.$newsReaderLight,
-
-    // TODO: Try to use the fontstyle mixins?
     font-family: v.$newsReaderLight;
     font-weight: 100;
     font-size: v.$title_mobile-font-size;
     line-height: v.$wordMark-lineHeight;
-    // @include generalFontStyle(
-    //   $font-family: v.$newsReaderLight,
-    //   $font-size: v.$title_mobile-font-size,
-    //   $line-height: v.$wordMark-lineHeight,
-    //   // $font-weight: v.$FW-light,
-    //   // $font-weight: 100,
-    //   // $font-style: v.$FW-normal
-    // );
+
     @include tablet {
       font-size: v.$wordMark-font-size;
       line-height: v.$title-line-height;
+    }
+    @include desktop {
       width: 50%;
     }
   }
 
   &__text-italic {
-    // TODO: Try to use the fontstyle mixins?
     font-family: v.$newsReader;
     font-size: v.$heading-font-size;
-    // font-size: 32px;
     line-height: v.$title_mobile-line-height;
     font-style: italic;
-    // @include generalFontStyle(
-    // );
+
     @include tablet {
       font-size: v.$wordMark-font-size;
       line-height: v.$title-line-height;

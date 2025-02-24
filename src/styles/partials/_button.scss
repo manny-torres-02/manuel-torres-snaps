@@ -6,19 +6,16 @@
     color: v.$forestGreen;
     border: 2px solid v.$forestGreen;
     border-radius: 20px;
-    // box-sizing: border-box;
     box-sizing: content-box;
     @include body-style($font-size: 16px);
     @include tablet {
       padding: 5.5px 22px;
-      // padding: 20px;
     }
   }
 
   &__button:hover {
     background-color: v.$forestGreen;
     color: v.$white;
-    // fill: red;
     .nav__icon path {
       fill: v.$white;
     }
@@ -27,7 +24,6 @@
   &__button--active {
     background-color: v.$forestGreen;
     color: v.$white;
-    // fill: red;
     .nav__icon path {
       fill: v.$white;
     }

@@ -1,43 +1,26 @@
-// @use "/Users/manueltorres/Documents/Brainstation_SE/manuel-torres-snaps/src/styles/partials.scss/_variables.scss";
 @use "./styles/partials/variables" as *;
 @use "./styles/partials/mixins" as *;
-// @use "/Users/manueltorres/Documents/Brainstation_SE/manuel-torres-snaps/src/components/Header/Header.scss";
 
 html,
 body {
   margin: 0;
   padding: 0;
-  // font-family: $newsReader;
   background-color: $pistachio;
   @include tablet {
     font-size: 20px;
   }
 }
 
-body {
+@include body-style;
+
+@include tablet {
+  font-size: 20px;
+
   & > * {
-    // padding: 1.33rem;
-  }
-
-  @include body-style;
-
-  @include tablet {
-    //TODO: remove this?
-    font-size: 20px;
-
-    & > * {
-      // padding: 0 1.25rem;
-    }
-  }
-
-  @include desktop {
-    // TODO: Adjust the auto field using REM here
-    // margin: 0 variables.$tablet-OM;
   }
 }
 
-#root {
-  // width: 100%;
+@include desktop {
 }
 
 .App-Wrapper {

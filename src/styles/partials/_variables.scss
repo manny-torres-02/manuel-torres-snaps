@@ -36,7 +36,7 @@
     format("woff")
       url("./src/assets/fonts/Alternative Files/Outfit-Medium.woff2")
       format("woff2");
-  font-weight: 500; //is this normal or bold? style sheet looks to be bold
+  font-weight: 500; 
   font-style: "normal";
 }
 
@@ -62,58 +62,44 @@ $FW-500: 500;
 // WordMark
 $wordMark_mobile-font-size: 32px;
 $wordMark_mobile-line-height: 32px;
-// $wordMark_mobile-font-weight: "regular";
 
 $wordMark-font-size: 40px;
 $wordMark-lineHeight: 40px;
-// $wordMark_mobile-font-weight: "regular";
 
 // Title
 $title_mobile-font-size: 26px;
 $title_mobile-line-height: 38px;
-//FW light - 300
-//normal or italic
 
 $title-font-size: 52px;
 $title-line-height: 66px;
-//fw 300
-//normal or italic
 
 // Heading
 $heading_mobile-font-size: 18px;
 $heading_mobile-line-height: 23px;
-//fw 500
 
 $heading-font-size: 24px;
 $heading-line-height: 30px;
-//fw 500
 
 // Body
 $body_mobile-font-size: 12px;
 $body_mobile-line-height: 15px;
-//fw 500 or 300
 
 $body-font-size: 20px;
 $body-line-height: 26px;
-//fw 500 or 300
 
 // SmallBody
 $small-body_mobile-font-size: 10px;
 $smallbody_mobile-line-height: 12px;
-//fw 500
 
 $small-body-font-size: 12px;
 $small-body-line-height: 15px;
-//fw 500
 
 // SmallBody
 $label_mobile-font-size: 12px;
 $label_mobile-line-height: 15px;
-//fw 500
 
 $label-body-font-size: 12px;
 $label-body-line-height: 15px;
-//fw 500
 
 // Colors
 // Primary
@@ -134,7 +120,6 @@ $desktop-g: 24px;
 // Margin
 $mobile-OM: 16px;
 $tablet-OM: 24px;
-// Desktop auto;
 
 //Columns
 $desktop-columns: 80px;
