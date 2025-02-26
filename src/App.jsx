@@ -26,7 +26,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
-          
+          <Route path="/" element=""/>
         </Routes>
       </BrowserRouter>
       <Header handleFilterClick={handleFilterClick} />
