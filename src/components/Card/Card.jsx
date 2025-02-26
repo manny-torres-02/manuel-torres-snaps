@@ -1,4 +1,4 @@
-import "./Card.css";
+import "./Card.scss";
 
 const Card = ({
   photoDescription,

@@ -1,4 +1,4 @@
-import "./Tags.css";
+import "./Tags.scss";
 const Tags = ({ isSelected, name, onClick }) => {
   return (
     <>

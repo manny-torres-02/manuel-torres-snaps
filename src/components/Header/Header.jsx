@@ -1,5 +1,5 @@
 import FilterIcon from "../../assets/images/Filter.svg?react";
-import "./Header.css";
+import "./Header.scss";
 
 const Header = ({ handleFilterClick }) => {
   return (

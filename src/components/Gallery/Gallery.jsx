@@ -1,7 +1,8 @@
 import Card from "../Card/Card";
 import ImageData from "../../data/photos.json";
-import "./Gallery.css";
-let data = ImageData;
+import "./Gallery.scss";
+
+// let data = ImageData;
 const Gallery = ({ selectedTag, showFiltered, showTags }) => {
   const test = ImageData.filter((image) =>
     selectedTag ? image.tags.includes(selectedTag) : true

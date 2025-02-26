@@ -6,21 +6,15 @@ body {
   margin: 0;
   padding: 0;
   background-color: $pistachio;
+  @include body-style;
   @include tablet {
     font-size: 20px;
+
+    & > * {
+    }
   }
-}
-
-@include body-style;
-
-@include tablet {
-  font-size: 20px;
-
-  & > * {
+  @include desktop {
   }
-}
-
-@include desktop {
 }
 
 .App-Wrapper {

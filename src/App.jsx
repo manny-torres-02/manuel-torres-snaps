@@ -1,7 +1,5 @@
 import { useState } from "react";
-
-import "./App.css";
-import Tags from "./components/Tags/Tags";
+import "./App.scss";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Hero from "./components/Hero/Hero";
