@@ -1,6 +1,5 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+
 import "./App.css";
 import Tags from "./components/Tags/Tags";
 import Header from "./components/Header/Header";
@@ -12,7 +11,6 @@ import FilterTags from "./components/FilterTags/FilterTags";
 function App() {
   const [showTags, setShowTags] = useState(false);
   const [selectedTag, setSelectedTag] = useState(null);
-
 
   function handleFilterClick() {
     setShowTags(!showTags);
