@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
@@ -23,6 +24,11 @@ function App() {
 
   return (
     <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element=""/>
+        </Routes>
+      </BrowserRouter>
       <Header handleFilterClick={handleFilterClick} />
       <div className="App-Wrapper">
         <FilterTags
