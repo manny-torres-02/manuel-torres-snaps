@@ -6,11 +6,11 @@ import Footer from "./components/Footer/Footer";
 import Hero from "./components/Hero/Hero";
 import Gallery from "./components/Gallery/Gallery";
 import FilterTags from "./components/FilterTags/FilterTags";
+import HomePage from "./pages/HomePage/HomePage";
 
 function App() {
   const [showTags, setShowTags] = useState(false);
   const [selectedTag, setSelectedTag] = useState(null);
-
   function handleFilterClick() {
     setShowTags(!showTags);
 
@@ -24,12 +24,13 @@ function App() {
 
   return (
     <>
+      <Header handleFilterClick={handleFilterClick} />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element=""/>
+          <Route path="/" element={<HomePage />} />
         </Routes>
       </BrowserRouter>
-      <Header handleFilterClick={handleFilterClick} />
+
       <div className="App-Wrapper">
         <FilterTags
           showTags={showTags}
@@ -39,7 +40,7 @@ function App() {
           showFiltered={showTags}
         />
         <div className="Hero-Gallery-wrapper">
-          <Hero />
+          {/* <Hero /> */}
           <Gallery selectedTag={selectedTag} showFiltered={showTags} />
         </div>
       </div>
