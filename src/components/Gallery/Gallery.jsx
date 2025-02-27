@@ -22,6 +22,7 @@ const Gallery = ({ selectedTag, showFiltered, showTags }) => {
             timestamp={image.timestamp}
             tags={image.tags}
             comments={image.comments}
+            
           />
         ))}
       </div>

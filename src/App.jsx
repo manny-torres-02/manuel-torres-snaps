@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.scss";
-import Header from "./components/Header/Header";
-import Footer from "./components/Footer/Footer";
+
 import Hero from "./components/Hero/Hero";
 import Gallery from "./components/Gallery/Gallery";
 import FilterTags from "./components/FilterTags/FilterTags";
 import HomePage from "./pages/HomePage/HomePage";
+import PhotoPage from "./pages/PhotoPage/PhotoPage";
 
 function App() {
   const [showTags, setShowTags] = useState(false);
@@ -24,14 +24,13 @@ function App() {
 
   return (
     <>
-      <Header handleFilterClick={handleFilterClick} />
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="Photo" element={<PhotoPage />} />
         </Routes>
       </BrowserRouter>
-
-      <div className="App-Wrapper">
+      {/* <div className="App-Wrapper">
         <FilterTags
           showTags={showTags}
           setShowTags={setShowTags}
@@ -41,10 +40,10 @@ function App() {
         />
         <div className="Hero-Gallery-wrapper">
           {/* <Hero /> */}
-          <Gallery selectedTag={selectedTag} showFiltered={showTags} />
-        </div>
-      </div>
-      <Footer />
+      {/* <Gallery selectedTag={selectedTag} showFiltered={showTags} />
+        </div> 
+       </div> */}
+      {/* <Footer /> */}
     </>
   );
 }

@@ -1,11 +1,14 @@
 import FilterIcon from "../../assets/images/Filter.svg?react";
+import { NavLink } from "react-router-dom";
 import "./Header.scss";
 
 const Header = ({ handleFilterClick }) => {
   return (
     <>
       <nav className="nav">
-        <h1 className="nav__header">Snaps</h1>
+        <h1 className="nav__header">
+          <NavLink to="/">Snaps</NavLink>
+        </h1>
         <button onClick={handleFilterClick} className="nav__button">
           Filters
           <FilterIcon className="nav__icon" />
