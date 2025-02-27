@@ -28,6 +28,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="Photo" element={<PhotoPage />} />
+          {/* TODO: Add the error/Not Found Page.  */}
         </Routes>
       </BrowserRouter>
       {/* <div className="App-Wrapper">

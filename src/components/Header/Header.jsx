@@ -7,6 +7,7 @@ const Header = ({ handleFilterClick }) => {
     <>
       <nav className="nav">
         <h1 className="nav__header">
+          {/* TODO: Style the NavLink... */}
           <NavLink to="/">Snaps</NavLink>
         </h1>
         <button onClick={handleFilterClick} className="nav__button">
