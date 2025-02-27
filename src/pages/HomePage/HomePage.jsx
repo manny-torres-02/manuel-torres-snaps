@@ -11,6 +11,7 @@ import axios from "axios";
 const HomePage = () => {
   const [showTags, setShowTags] = useState(false);
   const [selectedTag, setSelectedTag] = useState(null);
+  const [photoData, setPhotoData] = useState();
 
   const baseURL = "https://unit-3-project-c5faaab51857.herokuapp.com/";
   const key = "3b75373b-9ad0-47af-bd5d-707946328244";
@@ -23,8 +24,6 @@ const HomePage = () => {
     }
   }
 
-  function selectTag() {}
-
   useEffect(() => {
     //function to pull the key
     // const fetchKey = async () => {
@@ -34,22 +33,27 @@ const HomePage = () => {
     //   } catch (error) {
     //     console.log(error);
     //   }
-    const response = async () => {
+    const fetchPhotoData = async () => {
       try {
         const fetchData = await axios.get(
           `${baseURL}photos/?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`
         );
-        console.log(fetchData);
-        let data = fetchData;
-        return data;
+        console.log("this is from the call", fetchData.data);
+        let data = fetchData.data;
+        setPhotoData(fetchData.data);
       } catch (error) {
         console.log(error);
       }
     };
 
     // fetchKey();
-    response();
+    fetchPhotoData();
+    console.log("setphotodata:", photoData);
   }, []);
+
+  useEffect(() => {
+    console.log("setPhotoData:", photoData);
+  }, [photoData]);
 
   return (
     <>
