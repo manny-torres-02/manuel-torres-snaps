@@ -23,32 +23,17 @@ const HomePage = () => {
     }
   }
 
-  // useEffect(() => {
-  //   //function to pull the key
-  //   // const fetchKey = async () => {
-  //   //   try {
-  //   //     const response = await axios.get(`${baseURL}register`);
-  //   //     console.log(response);
-  //   //   } catch (error) {
-  //   //     console.log(error);
-  //   //   }
-  //   const fetchPhotoData = async () => {
-  //     try {
-  //       const fetchData = await axios.get(
-  //         `${baseURL}photos/?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`
-  //       );
-  //       console.log("this is from the call", fetchData.data);
-  //       data = fetchData.data;
-  //       setPhotoData(fetchData.data);
-  //       console.log("running setPhotoData!: ", data);
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   };
+  useEffect(() => {
+    //function to pull the key
+    // const fetchKey = async () => {
+    //   try {
+    //     const response = await axios.get(`${baseURL}register`);
+    //     console.log(response);
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
 
-  //   // fetchKey();
-  //   fetchPhotoData();
-  // }, []);
+  }, []);
 
   return (
     <>

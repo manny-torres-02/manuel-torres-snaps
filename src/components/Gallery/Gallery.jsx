@@ -7,11 +7,17 @@ import "./Gallery.scss";
 
 // let data = ImageData;
 const Gallery = ({ baseURL, selectedTag, showFiltered, showTags }) => {
-  const [photoData, setPhotoData] = useState();
-  // TODO: Refactor this piece. rename this
-  const test = photoData.filter((image) =>
-    selectedTag ? image.tags.includes(selectedTag) : true
+  const [photoData, setPhotoData] = useState([]);
+  // const test = photoData.filter((image) =>
+  //   selectedTag ? image.tags.includes(selectedTag) : true
+  // );
+  const filteredImages = photoData.filter((photo) =>
+    selectedTag ? photo.tags.includes(selectedTag) : true
   );
+
+  // const filteredImages = photoData.filter((image) =>
+  //   selectedTag ? image.tags.includes(selectedTag) : true
+  // );
   let data;
 
   useEffect(() => {
@@ -46,7 +52,7 @@ const Gallery = ({ baseURL, selectedTag, showFiltered, showTags }) => {
   return (
     <>
       <div className={`gallery ${showFiltered ? "gallery__with-filters" : ""}`}>
-        {test.map((photoData) => (
+        {filteredImages.map((photoData) => (
           <Card
             showFiltered={showFiltered}
             key={photoData.id}
