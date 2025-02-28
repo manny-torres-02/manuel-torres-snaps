@@ -14,6 +14,8 @@ const FilterTags = ({ setShowTags, showTags, setSelectedTag, selectedTag }) => {
     }
   };
 
+
+
   return (
     <>
       {showTags && (
