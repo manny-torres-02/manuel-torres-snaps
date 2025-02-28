@@ -8,7 +8,8 @@ import "./Gallery.scss";
 // let data = ImageData;
 const Gallery = ({ baseURL, selectedTag, showFiltered, showTags }) => {
   const [photoData, setPhotoData] = useState();
-  const test = ImageData.filter((image) =>
+  // TODO: Refactor this piece. rename this
+  const test = photoData.filter((image) =>
     selectedTag ? image.tags.includes(selectedTag) : true
   );
   let data;
@@ -40,22 +41,22 @@ const Gallery = ({ baseURL, selectedTag, showFiltered, showTags }) => {
     fetchPhotoData();
   }, []);
 
-  console.log("running PhotioData outside of useEffect", photoData[1].tags);
+  console.log("running PhotioData outside of useEffect", photoData);
 
   return (
     <>
       <div className={`gallery ${showFiltered ? "gallery__with-filters" : ""}`}>
-        {test.map((image) => (
+        {test.map((photoData) => (
           <Card
             showFiltered={showFiltered}
-            key={image.id}
-            photo={image.photo}
-            photoDescription={image.photoDescription}
-            photographer={image.photographer}
-            likes={image.likes}
-            timestamp={image.timestamp}
-            tags={image.tags}
-            comments={image.comments}
+            key={photoData.id}
+            photo={photoData.photo}
+            photoDescription={photoData.photoDescription}
+            photographer={photoData.photographer}
+            likes={photoData.likes}
+            timestamp={photoData.timestamp}
+            tags={photoData.tags}
+            comments={photoData.comments}
           />
         ))}
       </div>
