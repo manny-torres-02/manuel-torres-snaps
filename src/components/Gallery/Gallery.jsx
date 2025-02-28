@@ -8,16 +8,13 @@ import "./Gallery.scss";
 // let data = ImageData;
 const Gallery = ({ baseURL, selectedTag, showFiltered, showTags }) => {
   const [photoData, setPhotoData] = useState([]);
-  // const test = photoData.filter((image) =>
-  //   selectedTag ? image.tags.includes(selectedTag) : true
-  // );
-  const filteredImages = photoData.filter((photo) =>
-    selectedTag ? photo.tags.includes(selectedTag) : true
-  );
 
-  // const filteredImages = photoData.filter((image) =>
-  //   selectedTag ? image.tags.includes(selectedTag) : true
-  // );
+  const filteredImages = photoData.filter((photos) =>
+    //if selectedTag is true then make this filter
+    // on the photos.tags and match to the selected tag
+    //the selectedTags is set up and added to FilterTags.jsx
+    selectedTag ? photos.tags.includes(selectedTag) : true
+  );
   let data;
 
   useEffect(() => {
