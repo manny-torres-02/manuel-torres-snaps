@@ -27,7 +27,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="Photo" element={<PhotoPage />} />
+          <Route path="/Photos/:PhotoId" element={<PhotoPage />} />
+          
           {/* TODO: Add the error/Not Found Page.  */}
         </Routes>
       </BrowserRouter>

@@ -51,6 +51,7 @@ const Gallery = ({ baseURL, selectedTag, showFiltered, showTags }) => {
       <div className={`gallery ${showFiltered ? "gallery__with-filters" : ""}`}>
         {filteredImages.map((photoData) => (
           <Card
+            PhotoID={photoData.id}
             showFiltered={showFiltered}
             key={photoData.id}
             photo={photoData.photo}
