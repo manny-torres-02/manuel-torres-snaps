@@ -32,7 +32,6 @@ const HomePage = () => {
     //   } catch (error) {
     //     console.log(error);
     //   }
-
   }, []);
 
   return (
@@ -45,6 +44,7 @@ const HomePage = () => {
           setSelectedTag={setSelectedTag}
           selectedTag={selectedTag}
           showFiltered={showTags}
+          baseURL={baseURL}
         />
         <div className="Hero-Gallery-wrapper">
           <Hero />
