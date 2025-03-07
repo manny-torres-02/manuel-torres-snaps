@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import axios from "axios";
 
 import Card from "../Card/Card";
@@ -50,18 +51,21 @@ const Gallery = ({ baseURL, selectedTag, showFiltered, showTags }) => {
     <>
       <div className={`gallery ${showFiltered ? "gallery__with-filters" : ""}`}>
         {filteredImages.map((photoData) => (
-          <Card
-            PhotoID={photoData.id}
-            showFiltered={showFiltered}
-            key={photoData.id}
-            photo={photoData.photo}
-            photoDescription={photoData.photoDescription}
-            photographer={photoData.photographer}
-            likes={photoData.likes}
-            timestamp={photoData.timestamp}
-            tags={photoData.tags}
-            comments={photoData.comments}
-          />
+          <div>
+            <Link to={`/Photos/${photoData.id}`}>{photoData.id}</Link>
+            <Card
+              PhotoID={photoData.id}
+              showFiltered={showFiltered}
+              key={photoData.id}
+              photo={photoData.photo}
+              photoDescription={photoData.photoDescription}
+              photographer={photoData.photographer}
+              likes={photoData.likes}
+              timestamp={photoData.timestamp}
+              tags={photoData.tags}
+              comments={photoData.comments}
+            />
+          </div>
         ))}
       </div>
     </>

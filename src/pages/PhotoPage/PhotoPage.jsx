@@ -5,12 +5,13 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
 const PhotoPage = () => {
+  const PhotoID = useParams();
   return (
     <>
       <Header />
       <h1> Hello</h1>
 
-      <div style={{ fontSize: "50px" }}>Now showing post {id}</div>
+      <div style={{ fontSize: "50px" }}>Now showing post {PhotoID}</div>
       <Footer />
     </>
   );
