@@ -2,11 +2,20 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Form.scss";
 
-const Form = () => {
-  const [name, setName] = useSatate("");
-  const [comment, setComment
-    
-  ] = useSatate("");
+const Form = ({ baseURL, photoID, fetchPhoto }) => {
+  const [name, setName] = useState("");
+  const [comment, setComment] = useState("");
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await axios.post(
+        `${baseURL}photos/${photoID}/comments?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`, {name, comment}
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <>
       <div>TEST</div>
@@ -20,6 +29,10 @@ const Form = () => {
           <label for="comment"></label>
           <textarea type="text" name="comment" id="comment" value={comment} />
         </div>
+        <button type="submit" onClick={handleSubmit}>
+          {" "}
+          Submit{" "}
+        </button>
       </form>
     </>
   );

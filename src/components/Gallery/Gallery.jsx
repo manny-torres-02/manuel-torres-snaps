@@ -31,10 +31,10 @@ const Gallery = ({ baseURL, selectedTag, showFiltered, showTags }) => {
         const fetchData = await axios.get(
           `${baseURL}photos/?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`
         );
-        console.log("this is from the call", fetchData.data);
+        // console.log("this is from the call", fetchData.data);
         data = fetchData.data;
         setPhotoData(fetchData.data);
-        console.log("running setPhotoData!: ", data);
+        // console.log("running setPhotoData!: ", data);
       } catch (error) {
         console.log(error);
       }
@@ -44,7 +44,7 @@ const Gallery = ({ baseURL, selectedTag, showFiltered, showTags }) => {
     fetchPhotoData();
   }, []);
 
-  console.log("running PhotioData outside of useEffect", photoData);
+  // console.log("running PhotioData outside of useEffect", photoData);
 
   return (
     <>
