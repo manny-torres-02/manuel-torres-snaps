@@ -50,19 +50,24 @@ const Gallery = ({ baseURL, selectedTag, showFiltered, showTags }) => {
     <>
       <div className={`gallery ${showFiltered ? "gallery__with-filters" : ""}`}>
         {filteredImages.map((photoData) => (
-          <div key={photoData.id}>
-            <Link to={`/Photos/${photoData.id}`}>{photoData.id}</Link>
-            <Card
-              photoID={photoData.id}
-              showFiltered={showFiltered}
-              photo={photoData.photo}
-              photoDescription={photoData.photoDescription}
-              photographer={photoData.photographer}
-              likes={photoData.likes}
-              timestamp={photoData.timestamp}
-              tags={photoData.tags}
-              comments={photoData.comments}
-            />
+          <div className="card-wrapper" key={photoData.id}>
+            <Link className="gallery__link" to={`/Photos/${photoData.id}`}>
+              {/* {photoData.id} */}
+              <Card
+                photoID={photoData.id}
+                showFiltered={showFiltered}
+                photo={photoData.photo}
+                photoDescription={photoData.photoDescription}
+                photographer={photoData.photographer}
+                likes={photoData.likes}
+                timestamp={photoData.timestamp}
+                tags={photoData.tags}
+                comments={photoData.comments}
+                showLikes={false}
+                showTimeStamp={false}
+                showPhotographerNameInCard={false}
+              />
+            </Link>
           </div>
         ))}
       </div>

@@ -3,6 +3,7 @@ import axios from "axios";
 import { useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import Card from "../../components/Card/Card";
 
 const PhotoPage = () => {
   const { id } = useParams(); // Ensure the parameter name matches the route
@@ -34,9 +35,23 @@ const PhotoPage = () => {
     <>
       <Header />
       <div>
-
-        <h1>{id} photoID</h1>
+        <h1>{id} </h1>
+        <Card
+          photoID={photoData.id}
+          photo={photoData.photo}
+          photoDescription={photoData.photoDescription}
+          photographer={photoData.photographer}
+          tags={photoData.tags}
+          likes={photoData.likes}
+          timestamp={photoData.timestamp}
+          comments={photoData.comments}
+          likes={photoData.likes}
+          showLikes={true}
+          showTimeStamp={true}
+          showPhotographerNameInCard={true}
+        />
       </div>
+      <form type="submit"></form>
       <Footer />
     </>
   );

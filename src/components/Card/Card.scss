@@ -16,9 +16,25 @@
   }
 
   @include desktop {
-    width: 27%;
+    width: 100%;
+    // Double Check how often filters appears
     &__with-filters {
       width: 40%;
+    }
+  }
+  &-wrapper {
+    width: 300px;
+    height: 300px;
+    @include tablet {
+      border-radius: 12px;
+      width: 45%;
+    }
+
+    @include desktop {
+      width: 27%;
+      &__with-filters {
+        width: 40%;
+      }
     }
   }
 
