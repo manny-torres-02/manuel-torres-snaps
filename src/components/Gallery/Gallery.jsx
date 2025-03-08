@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 import Card from "../Card/Card";
-import ImageData from "../../data/photos.json";
 import "./Gallery.scss";
 
 // let data = ImageData;
@@ -51,12 +50,11 @@ const Gallery = ({ baseURL, selectedTag, showFiltered, showTags }) => {
     <>
       <div className={`gallery ${showFiltered ? "gallery__with-filters" : ""}`}>
         {filteredImages.map((photoData) => (
-          <div>
+          <div key={photoData.id}>
             <Link to={`/Photos/${photoData.id}`}>{photoData.id}</Link>
             <Card
-              PhotoID={photoData.id}
+              photoID={photoData.id}
               showFiltered={showFiltered}
-              key={photoData.id}
               photo={photoData.photo}
               photoDescription={photoData.photoDescription}
               photographer={photoData.photographer}

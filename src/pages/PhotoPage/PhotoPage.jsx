@@ -5,13 +5,38 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 
 const PhotoPage = () => {
-  const PhotoID = useParams();
+  const { id } = useParams(); // Ensure the parameter name matches the route
+  const [photoData, setPhotoData] = useState(null);
+  const baseURL = "https://unit-3-project-c5faaab51857.herokuapp.com/";
+  console.log(id);
+
+  useEffect(() => {
+    const fetchPhoto = async () => {
+      try {
+        const response = await axios.get(
+          `${baseURL}photos/${id}?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`
+        );
+        console.log("API call to photopage:", response.data);
+        setPhotoData(response.data); // Set the state with the fetched data
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchPhoto();
+  }, [id, baseURL]); // Ensure the effect runs when id or baseURL changes
+
+  if (!photoData) {
+    return <div>Loading...</div>; // Show a loading state while fetching data
+  }
+
   return (
     <>
       <Header />
-      <h1> Hello</h1>
+      <div>
 
-      <div style={{ fontSize: "50px" }}>Now showing post {PhotoID}</div>
+        <h1>{id} photoID</h1>
+      </div>
       <Footer />
     </>
   );
