@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Card from "../../components/Card/Card";
+import Form from "../../components/Form/Form";
 
 const PhotoPage = () => {
   const { id } = useParams(); // Ensure the parameter name matches the route
@@ -51,7 +52,7 @@ const PhotoPage = () => {
           showPhotographerNameInCard={true}
         />
       </div>
-      <form type="submit"></form>
+      <Form />
       <Footer />
     </>
   );
