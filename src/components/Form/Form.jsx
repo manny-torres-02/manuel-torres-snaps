@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import Modal from "../Modal/Modal";
 import "./Form.scss";
 
 const Form = ({ baseURL, photoID, fetchPhoto, fetchComments }) => {
@@ -8,6 +9,7 @@ const Form = ({ baseURL, photoID, fetchPhoto, fetchComments }) => {
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
   const nameUpdate = (e) => {
     setName(e.target.value);
@@ -25,13 +27,19 @@ const Form = ({ baseURL, photoID, fetchPhoto, fetchComments }) => {
 
     // BREAK IF THE STATEMENT AGREES
     if (!name && !comment) {
-      alert("please fill in the name and the comment fields");
+      // alert("please fill in the name and the comment fields");
+      setErrorMessage("please fill in the name and the comment fields");
+      setShowModal(true);
       return;
     } else if (!comment) {
-      alert("please fill in the comment field");
+      // alert("please fill in the comment field");
+      setErrorMessage("please fill in the comment field");
+      setShowModal(true);
       return;
     } else if (!name) {
-      alert("please fill in the name field");
+      // alert("please fill in the name field");
+      setErrorMessage("please fill in the name field");
+      setShowModal(true);
       return;
     }
     try {
@@ -72,10 +80,15 @@ const Form = ({ baseURL, photoID, fetchPhoto, fetchComments }) => {
           />
         </div>
         <button type="submit" onClick={handleSubmit}>
-          {" "}
-          Submit{" "}
+          Submit
         </button>
       </form>
+
+      <Modal
+        showModal={showModal}
+        errorMessage={errorMessage}
+        close={() => setShowModal(false)}
+      />
     </>
   );
 };
