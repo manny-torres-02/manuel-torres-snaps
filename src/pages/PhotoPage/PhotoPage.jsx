@@ -11,6 +11,7 @@ const PhotoPage = () => {
   const { id } = useParams();
   const [photoData, setPhotoData] = useState(null);
   const [photoComments, setPhotoComments] = useState([]);
+  const [headerIcon, setHeaderIcon] = useState(true);
   const baseURL = "https://unit-3-project-c5faaab51857.herokuapp.com/";
 
   // console.log(id);
@@ -75,7 +76,7 @@ const PhotoPage = () => {
 
   return (
     <>
-      <Header />
+      <Header headerIcon={headerIcon} />
       <div>
         <h1>{id} </h1>
         <Card
