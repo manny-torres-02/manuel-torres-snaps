@@ -1,5 +1,5 @@
 import "./Card.scss";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
 const Card = ({
@@ -14,6 +14,7 @@ const Card = ({
   comments,
   showTimeStamp,
   showPhotographerNameInCard,
+  photoID
 }) => {
   //is this needed?
   const { id } = useParams();
@@ -22,7 +23,9 @@ const Card = ({
     <>
       <div className={`card ${showFiltered ? "card__with-filters" : ""}`}>
         {/* <NavLink to="/Photo">Snaps</NavLink> */}
-        <img className="card__image" src={photo} alt={photoDescription} />
+        <Link className="gallery__link" to={`/Photos/${photoID}`}>
+          <img className="card__image" src={photo} alt={photoDescription} />
+        </Link>
         {/* <h1>card details: {PhotoID}</h1> */}
         {showPhotographerNameInCard === false && (
           <p className="card__photographer"> {photographer}</p>

@@ -8,37 +8,55 @@ import Form from "../../components/Form/Form";
 import Comments from "../../components/Comments/Comments";
 
 const PhotoPage = () => {
-  const { id } = useParams(); // Ensure the parameter name matches the route
+  const { id } = useParams();
   const [photoData, setPhotoData] = useState(null);
   const [photoComments, setPhotoComments] = useState([]);
   const baseURL = "https://unit-3-project-c5faaab51857.herokuapp.com/";
+
   console.log(id);
 
   const fetchComments = async () => {
+    let data;
+    const adjustDate = (item) => {
+      const date = new Date(item);
+      const month = String(date.getUTCMonth() + 1);
+      const day = String(date.getUTCDay());
+      const year = String(date.getUTCFullYear());
+      let placeholder = month + "/" + day + "/" + year;
+      return placeholder;
+    };
     try {
       const response = await axios.get(
         `${baseURL}photos/${id}/comments?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`
       );
       console.log("here are the comments", response.data);
+      //sort comments
+      data = response.data;
+      data.sort((a, b) => {
+        return b.timestamp - a.timestamp;
+      });
+      const formatdate = (data) => {
+        return data.forEach(adjustDate(data.timestamp));
+      };
       setPhotoComments(response.data);
     } catch (error) {
       console.log(error);
     }
   };
 
+  const fetchPhoto = async () => {
+    try {
+      const response = await axios.get(
+        `${baseURL}photos/${id}?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`
+      );
+      // console.log("API call to photopage:", response.data);
+      setPhotoData(response.data); // Set the state with the fetched data
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
     // TODO: is it better to have the functions live within useEffect? possibly shift this outside for readability
-    const fetchPhoto = async () => {
-      try {
-        const response = await axios.get(
-          `${baseURL}photos/${id}?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`
-        );
-        // console.log("API call to photopage:", response.data);
-        setPhotoData(response.data); // Set the state with the fetched data
-      } catch (error) {
-        console.log(error);
-      }
-    };
 
     fetchPhoto();
     fetchComments();
@@ -67,7 +85,7 @@ const PhotoPage = () => {
           showPhotographerNameInCard={true}
         />
       </div>
-      <Form />
+      <Form baseURL={baseURL} fetchComments={fetchComments} />
 
       <div>
         {photoComments.map((comment) => (
