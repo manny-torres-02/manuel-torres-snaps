@@ -15,7 +15,8 @@ const Card = ({
   showTimeStamp,
   showPhotographerNameInCard,
 }) => {
-  const { PhotoID } = useParams();
+  //is this needed?
+  const { id } = useParams();
 
   return (
     <>

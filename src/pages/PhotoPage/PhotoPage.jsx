@@ -5,6 +5,7 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import Card from "../../components/Card/Card";
 import Form from "../../components/Form/Form";
+import Comments from "../../components/Comments/Comments";
 
 const PhotoPage = () => {
   const { id } = useParams(); // Ensure the parameter name matches the route
@@ -18,8 +19,8 @@ const PhotoPage = () => {
       const response = await axios.get(
         `${baseURL}photos/${id}/comments?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`
       );
-      console.log(response.data);
-      setPhotoComments = response.data;
+      console.log("here are the comments", response.data);
+      setPhotoComments(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -43,9 +44,9 @@ const PhotoPage = () => {
     fetchComments();
   }, [id, baseURL]); // Ensure the effect runs when id or baseURL changes
 
-  if (!photoData) {
-    return <div>Loading...</div>; // Show a loading state while fetching data
-  }
+  // if (!photoData) {
+  //   return <div>Loading...</div>
+  // }
 
   return (
     <>
@@ -67,7 +68,18 @@ const PhotoPage = () => {
         />
       </div>
       <Form />
-      <div></div>
+
+      <div>
+        {photoComments.map((comment) => (
+          <Comments
+            key={comment.id}
+            name={comment.name}
+            timeStamp={comment.timestamp}
+            comment={comment.comment}
+          />
+        ))}
+      </div>
+
       <Footer />
     </>
   );
