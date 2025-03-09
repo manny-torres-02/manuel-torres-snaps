@@ -5,9 +5,10 @@ import "./Form.scss";
 
 const Form = ({ baseURL, photoID, fetchPhoto, fetchComments }) => {
   const { id } = useParams();
-
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
+  const [showModal, setShowModal] = useState(false);
+
   const nameUpdate = (e) => {
     setName(e.target.value);
     console.log(name);
@@ -21,6 +22,18 @@ const Form = ({ baseURL, photoID, fetchPhoto, fetchComments }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(name, comment);
+
+    // BREAK IF THE STATEMENT AGREES
+    if (!name && !comment) {
+      alert("please fill in the name and the comment fields");
+      return;
+    } else if (!comment) {
+      alert("please fill in the comment field");
+      return;
+    } else if (!name) {
+      alert("please fill in the name field");
+      return;
+    }
     try {
       const response = await axios.post(
         `${baseURL}photos/${id}/comments?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`,

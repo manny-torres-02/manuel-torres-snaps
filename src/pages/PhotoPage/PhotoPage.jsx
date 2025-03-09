@@ -13,32 +13,38 @@ const PhotoPage = () => {
   const [photoComments, setPhotoComments] = useState([]);
   const baseURL = "https://unit-3-project-c5faaab51857.herokuapp.com/";
 
-  console.log(id);
+  // console.log(id);
 
   const fetchComments = async () => {
     let data;
     const adjustDate = (item) => {
       const date = new Date(item);
+      // months are 0 indexed
       const month = String(date.getUTCMonth() + 1);
-      const day = String(date.getUTCDay());
+      const day = String(date.getDate()).padStart(2, "0"); //padstring to properly show the date if needed.
       const year = String(date.getUTCFullYear());
       let placeholder = month + "/" + day + "/" + year;
+      console.log(placeholder);
+      // return date.toLocaleDateString;
       return placeholder;
     };
     try {
       const response = await axios.get(
         `${baseURL}photos/${id}/comments?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`
       );
-      console.log("here are the comments", response.data);
+      // console.log("here are the comments", response.data);
       //sort comments
       data = response.data;
       data.sort((a, b) => {
         return b.timestamp - a.timestamp;
       });
-      const formatdate = (data) => {
-        return data.forEach(adjustDate(data.timestamp));
-      };
-      setPhotoComments(response.data);
+      // console.log("return the data;", data);
+      const formattedDate = data.map((comment) => ({
+        ...comment,
+        timestamp: adjustDate(comment.timestamp),
+      }));
+      console.log(formattedDate);
+      setPhotoComments(formattedDate);
     } catch (error) {
       console.log(error);
     }
@@ -60,7 +66,7 @@ const PhotoPage = () => {
 
     fetchPhoto();
     fetchComments();
-  }, [id, baseURL]); // Ensure the effect runs when id or baseURL changes
+  }, [baseURL]); // Ensure the effect runs when id or baseURL changes
 
   if (!photoData) {
     return <div>Loading...</div>;
