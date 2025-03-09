@@ -12,7 +12,8 @@
 
   @include tablet {
     border-radius: 12px;
-    // width: 45%;
+    width: 400px;
+    height: 400px;
   }
 
   @include desktop {
@@ -23,11 +24,13 @@
     }
   }
   &-wrapper {
-    // width: 300px;
-    // height: 300px;
+    width: 300px;
+    height: 300px;
     @include tablet {
       border-radius: 12px;
-      // width: 45%;
+      width: 400px;
+      height: 400px;
+      margin: 12px;
     }
 
     @include desktop {
@@ -40,12 +43,16 @@
 
   &__image {
     object-fit: cover;
-    height: 250px;
+
     // width: inherit;
     border-radius: 8px 8px 0 0;
 
     @include tablet {
       border-radius: 8px 8px 0 0;
+      width: 400px;
+      // o
+      // height: auto;
+      height: 350px;
     }
   }
 

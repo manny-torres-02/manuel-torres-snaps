@@ -16,13 +16,11 @@ const Card = ({
   showPhotographerNameInCard,
   photoID
 }) => {
-  //is this needed?
   const { id } = useParams();
 
   return (
     <>
       <div className={`card ${showFiltered ? "card__with-filters" : ""}`}>
-        {/* <NavLink to="/Photo">Snaps</NavLink> */}
         <Link className="gallery__link" to={`/Photos/${photoID}`}>
           <img className="card__image" src={photo} alt={photoDescription} />
         </Link>
