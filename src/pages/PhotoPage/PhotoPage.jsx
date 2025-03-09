@@ -28,6 +28,7 @@ const PhotoPage = () => {
       // return date.toLocaleDateString;
       return placeholder;
     };
+
     try {
       const response = await axios.get(
         `${baseURL}photos/${id}/comments?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`
@@ -39,12 +40,12 @@ const PhotoPage = () => {
         return b.timestamp - a.timestamp;
       });
       // console.log("return the data;", data);
-      const formattedDate = data.map((comment) => ({
+      const formatDate = data.map((comment) => ({
         ...comment,
         timestamp: adjustDate(comment.timestamp),
       }));
-      console.log(formattedDate);
-      setPhotoComments(formattedDate);
+      console.log(formatDate);
+      setPhotoComments(formatDate);
     } catch (error) {
       console.log(error);
     }
