@@ -44,9 +44,9 @@ const PhotoPage = () => {
     fetchComments();
   }, [id, baseURL]); // Ensure the effect runs when id or baseURL changes
 
-  // if (!photoData) {
-  //   return <div>Loading...</div>
-  // }
+  if (!photoData) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <>
@@ -74,7 +74,7 @@ const PhotoPage = () => {
           <Comments
             key={comment.id}
             name={comment.name}
-            timeStamp={comment.timestamp}
+            timestamp={comment.timestamp}
             comment={comment.comment}
           />
         ))}
