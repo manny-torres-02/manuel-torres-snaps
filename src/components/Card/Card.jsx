@@ -30,13 +30,11 @@ const Card = ({
 
         <div>
           <div className="card__tag-wrapper">
-            {/* Add in check to make sure tags exist */}
-            {tags &&
-              tags.map((tag, index) => (
-                <p className="card__tags" key={index}>
-                  {tag}
-                </p>
-              ))}
+            {tags.map((tag, index) => (
+              <p className="card__tags" key={index}>
+                {tag}
+              </p>
+            ))}
             {/* TODO: update the styling for all three items */}
             {showLikes && <p className="card__likes">Likes: {likes}</p>}
             {showTimeStamp && <p className="card__timestamp"> {timestamp}</p>}

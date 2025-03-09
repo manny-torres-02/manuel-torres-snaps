@@ -10,8 +10,7 @@ const Form = ({ baseURL, photoID, fetchPhoto }) => {
     e.preventDefault();
     try {
       await axios.post(
-        `${baseURL}photos/${photoID}/comments?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`,
-        { name, comment }
+        `${baseURL}photos/${photoID}/comments?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`, {name, comment}
       );
     } catch (error) {
       console.log(error);
@@ -19,13 +18,15 @@ const Form = ({ baseURL, photoID, fetchPhoto }) => {
   };
   return (
     <>
+      <div>TEST</div>
+      <div>TEST</div>
       <form method="post">
         <div>
-          <label htmlFor="name"></label>
+          <label for="name"></label>
           <input type="text" name="name" id="name" value={name} />
         </div>
         <div>
-          <label htmlFor="comment"></label>
+          <label for="comment"></label>
           <textarea type="text" name="comment" id="comment" value={comment} />
         </div>
         <button type="submit" onClick={handleSubmit}>
