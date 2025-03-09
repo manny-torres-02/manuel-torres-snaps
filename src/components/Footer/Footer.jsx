@@ -9,7 +9,9 @@ const Footer = () => {
     <>
       <footer className="footer">
         <p className="footer__wordMark">
-          <NavLink to="/">Snaps</NavLink>
+          <NavLink className="footer__link" to="/">
+            Snaps
+          </NavLink>
         </p>
         <div className="footer__list-wrapper">
           <ul className="footer__list footer__list-one">
@@ -24,10 +26,18 @@ const Footer = () => {
           </ul>
         </div>
         <div className="footer__icon-list">
-          <FacebookIcon className="footer__icon" />
-          <XIcon className="footer__icon" />
-          <Instagram className="footer__icon" />
-          <Pinterest className="footer__icon" />
+          <a href="https://www.facebook.com/" target="_blank">
+            <FacebookIcon className="footer__icon" />
+          </a>
+          <a href="https://x.com/home" target="_blank">
+            <XIcon className="footer__icon" />
+          </a>
+          <a href="https://www.instagram.com/" target="_blank">
+            <Instagram className="footer__icon" />
+          </a>
+          <a href="https://www.pinterest.com/" target="_blank">
+            <Pinterest className="footer__icon" />
+          </a>
         </div>
         <div className="footer__terms">
           <p>&#169; Snaps 2024</p>

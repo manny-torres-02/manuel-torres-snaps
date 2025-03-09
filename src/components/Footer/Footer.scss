@@ -18,6 +18,10 @@
       $line-height: $body-line-height
     );
   }
+  &__link {
+    text-decoration: none;
+    color: inherit;
+  }
 
   &__wordMark {
     @include wordMark-style();

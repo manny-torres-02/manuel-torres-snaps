@@ -16,7 +16,7 @@
     color: inherit;
     @include tablet {
       border-radius: 12px;
-      width: 45%;
+      width: inherit;
     }
 
     @include desktop {
