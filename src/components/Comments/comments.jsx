@@ -5,12 +5,7 @@ import { useParams } from "react-router-dom";
 
 const Comments = ({ name, timestamp, comment }) => {
   const { id } = useParams();
-  useEffect(() => {
-    // first;
-    // return () => {
-    // second;
-    // };
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <>

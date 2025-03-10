@@ -8,16 +8,110 @@
   width: 300px;
   height: 300px;
   margin-bottom: 24px;
-  border-radius: 8px 8px 0 0;
-
+  border-radius: 8px;
   @include tablet {
     border-radius: 12px;
-    width: 45%;
+    // width: 45%;
   }
 
   @include desktop {
     width: 100%;
-    // Double Check how often filters appears
+    &__with-filters {
+      width: 40%;
+    }
+  }
+  &-wrapper {
+    width: 300px;
+    height: 300px;
+    margin: 12px 0;
+    @include tablet {
+      border-radius: 12px;
+      width: 45%;
+      display: flex;
+      justify-content: center;
+    }
+
+    @include desktop {
+      width: 27%;
+      &__with-filters {
+        width: 40%;
+      }
+    }
+  }
+
+  &__image {
+    object-fit: cover;
+    height: 250px;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+
+    @include tablet {
+      border-radius: 8px 8px 0 0;
+    }
+  }
+
+  &__photographer {
+    background-color: #e4efec;
+    font-family: $outfit;
+    width: 100px;
+    height: 25px;
+    top: -30px;
+    position: relative;
+    margin: 0 0 0 auto;
+    border-bottom: 0.5px solid #1e6655;
+    text-align: end;
+    line-height: 25px;
+    border-radius: 5px 0 0 0;
+    padding-right: 8px;
+    @include tablet {
+      max-width: 100%;
+      font-size: $small-body-font-size;
+      top: -28.5px;
+    }
+  }
+  &__metadata {
+  }
+  &__tag-wrapper {
+    display: flex;
+    margin: auto;
+    position: relative;
+    bottom: 20px;
+  }
+
+  &__tags {
+    background-color: $white;
+    margin: 0 0 0 8px;
+    border: 2px solid $seaGreen;
+    border-radius: 6px;
+    padding: 6px 8px;
+    font-family: $outfit;
+
+    @include tablet {
+      font-size: 12px;
+    }
+  }
+
+  .nonClickable {
+    color: black;
+    border: 1px solid $seaGreen;
+  }
+}
+
+.photoPageCard {
+  background-color: $sage;
+  border-radius: 25px;
+  border: 1px solid $seaGreen;
+  width: 300px;
+  // height: 300px;
+  margin-bottom: 24px;
+  border-radius: 8px 8px 0 0;
+
+  @include tablet {
+    border-radius: 12px;
+  }
+
+  @include desktop {
+    width: 100%;
     &__with-filters {
       width: 40%;
     }
@@ -71,7 +165,8 @@
 
   &__tag-wrapper {
     display: flex;
-    margin: auto;
+    // margin: auto;
+    margin: 0 12px 0 12px;
     position: relative;
     bottom: 20px;
   }

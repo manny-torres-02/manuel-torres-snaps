@@ -34,13 +34,10 @@ const PhotoPage = () => {
       const response = await axios.get(
         `${baseURL}photos/${id}/comments?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`
       );
-      // console.log("here are the comments", response.data);
-      //sort comments
       data = response.data;
       data.sort((a, b) => {
         return b.timestamp - a.timestamp;
       });
-      // console.log("return the data;", data);
       const formatDate = data.map((comment) => ({
         ...comment,
         timestamp: adjustDate(comment.timestamp),
@@ -57,18 +54,15 @@ const PhotoPage = () => {
       const response = await axios.get(
         `${baseURL}photos/${id}?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`
       );
-      // console.log("API call to photopage:", response.data);
-      setPhotoData(response.data); // Set the state with the fetched data
+      setPhotoData(response.data);
     } catch (error) {
       console.log(error);
     }
   };
   useEffect(() => {
-    // TODO: is it better to have the functions live within useEffect? possibly shift this outside for readability
-
     fetchPhoto();
     fetchComments();
-  }, [baseURL]); // Ensure the effect runs when id or baseURL changes
+  }, [baseURL]);
 
   if (!photoData) {
     return <div>Loading...</div>;
@@ -78,7 +72,6 @@ const PhotoPage = () => {
     <>
       <Header headerIcon={headerIcon} />
       <div>
-        <h1>{id} </h1>
         <Card
           photoID={photoData.id}
           photo={photoData.photo}
@@ -91,6 +84,7 @@ const PhotoPage = () => {
           showLikes={true}
           showTimeStamp={true}
           showPhotographerNameInCard={true}
+          forPhotoPage={true}
         />
       </div>
       <Form baseURL={baseURL} fetchComments={fetchComments} />
