@@ -28,24 +28,9 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/Photos/:id" element={<PhotoPage />} />
-
-          {/* TODO: Add the error/Not Found Page.  */}
         </Routes>
       </BrowserRouter>
-      {/* <div className="App-Wrapper">
-        <FilterTags
-          showTags={showTags}
-          setShowTags={setShowTags}
-          setSelectedTag={setSelectedTag}
-          selectedTag={selectedTag}
-          showFiltered={showTags}
-        />
-        <div className="Hero-Gallery-wrapper">
-          {/* <Hero /> */}
-      {/* <Gallery selectedTag={selectedTag} showFiltered={showTags} />
-        </div> 
-       </div> */}
-      {/* <Footer /> */}
+
     </>
   );
 }
