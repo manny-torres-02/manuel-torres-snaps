@@ -78,15 +78,10 @@ const Card = ({
                   {adjustDate(timestamp)}
                 </p>
               )}
-
               <p className="photoPageCard__photographer">
                 Photo by: {photographer}
               </p>
             </div>
-            {/* </div> */}
-            {/* {showPhotographerNameInCard && (
-             
-            )} */}
           </div>
         </div>
       )}
