@@ -23,11 +23,6 @@
     @include wordMark-style();
   }
 
-  &__link {
-    text-decoration: none;
-    color: inherit;
-  }
-
   &__list-wrapper {
     @include tablet {
       width: 45%;

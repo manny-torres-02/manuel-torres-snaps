@@ -9,9 +9,7 @@ const Footer = () => {
     <>
       <footer className="footer">
         <p className="footer__wordMark">
-          <NavLink className="footer__link" to="/">
-            Snaps
-          </NavLink>
+          <NavLink to="/">Snaps</NavLink>
         </p>
         <div className="footer__list-wrapper">
           <ul className="footer__list footer__list-one">

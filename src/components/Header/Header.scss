@@ -24,11 +24,6 @@
     }
   }
 
-  &__link {
-    text-decoration: none;
-    color: inherit;
-  }
-
   &__icon {
     padding-left: 8px;
     width: auto;
@@ -39,7 +34,6 @@
   }
 
   &__button {
-    display: flex;
     align-items: center;
     font-family: v.$outfit;
     background-color: v.$pistachio;
@@ -47,22 +41,12 @@
     border: 2px solid v.$forestGreen;
     border-radius: 20px;
     box-sizing: content-box;
-    width: 5.5rem;
+    width: 5rem;
     padding: 8px 16px;
     font-weight: 700;
-    text-decoration: none;
     @include tablet {
       padding: 11px 22px;
       font-size: 18px;
-    }
-  }
-
-  &__icon-home {
-    padding: 0 8px 0 0;
-    width: auto;
-    @include tablet {
-      width: 1em;
-      height: 1em;
     }
   }
 
