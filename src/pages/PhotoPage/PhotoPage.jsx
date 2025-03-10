@@ -13,6 +13,7 @@ const PhotoPage = () => {
   const [photoData, setPhotoData] = useState(null);
   const [photoComments, setPhotoComments] = useState([]);
   const [headerIcon, setHeaderIcon] = useState(true);
+  const [commentsLength, setCommentsLength] = useState(0);
   const baseURL = "https://unit-3-project-c5faaab51857.herokuapp.com/";
 
   const adjustDate = (item) => {
@@ -36,7 +37,6 @@ const PhotoPage = () => {
       const year = String(date.getUTCFullYear());
       let placeholder = month + "/" + day + "/" + year;
       console.log(placeholder);
-      // return date.toLocaleDateString;
       return placeholder;
     };
 
@@ -45,6 +45,7 @@ const PhotoPage = () => {
         `${baseURL}photos/${id}/comments?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`
       );
       data = response.data;
+      setCommentsLength(data.length);
       data.sort((a, b) => {
         return b.timestamp - a.timestamp;
       });
@@ -72,7 +73,7 @@ const PhotoPage = () => {
   useEffect(() => {
     fetchPhoto();
     fetchComments();
-  }, [baseURL]);
+  }, [commentsLength]);
 
   if (!photoData) {
     return <div>Loading...</div>;
@@ -98,9 +99,8 @@ const PhotoPage = () => {
             forPhotoPage={true}
             adjustDate={adjustDate}
           />
-
           <Form baseURL={baseURL} fetchComments={fetchComments} />
-
+          <p> {commentsLength} comments</p>
           {photoComments.map((comment) => (
             <Comments
               key={comment.id}
