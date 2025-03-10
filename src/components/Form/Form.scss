@@ -1,0 +1,72 @@
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.form {
+  display: flex;
+  flex-direction: column;
+  &__input-wrapper {
+    font-family: $outfit;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 16px;
+    font-weight: 500;
+    font-size: 12px;
+    & * {
+      padding-bottom: 8px;
+    }
+  }
+
+  &__label {
+    line-height: 15px;
+  }
+
+  &__text-input {
+    height: 30px;
+    min-width: 280px;
+    padding: 8px;
+    border: 2px $seaGreen solid;
+    border-radius: 6px;
+    &:focus {
+      border-color: $forestGreen;
+      outline: none;
+    }
+    @include tablet {
+      border-radius: 12px;
+
+      height: 40px;
+      padding: 16px 8px;
+    }
+  }
+  &__text-area-input {
+    min-width: 280px;
+    padding: 8px;
+    border: 2px $seaGreen solid;
+    border-radius: 6px;
+    &:focus {
+      border-color: $forestGreen;
+      outline: none;
+    }
+    @include tablet {
+      border-radius: 12px;
+
+      height: 40px;
+      padding: 16px 8px;
+    }
+  }
+  &__text-input--error,
+  &__text-area-input--error {
+    border-color: #b10606;
+  }
+
+  &__button {
+    color: white;
+    background-color: $forestGreen;
+    border: none;
+    padding: 8px;
+    font-size: 12px;
+    margin-left: auto;
+    border-radius: 6px;
+    @include tablet {
+    }
+  }
+}

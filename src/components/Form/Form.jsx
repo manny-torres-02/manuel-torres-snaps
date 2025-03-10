@@ -10,36 +10,36 @@ const Form = ({ baseURL, photoID, fetchPhoto, fetchComments }) => {
   const [comment, setComment] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [nameErrorState, setNameErrorState] = useState(false);
+  const [commentErrorState, setCommentErrorState] = useState(false);
 
   const nameUpdate = (e) => {
     setName(e.target.value);
-    console.log(name);
   };
 
   const commentUpdate = (e) => {
     setComment(e.target.value);
-    console.log(setComment);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(name, comment);
 
     // BREAK IF THE STATEMENT AGREES
     if (!name && !comment) {
-      // alert("please fill in the name and the comment fields");
       setErrorMessage("please fill in the name and the comment fields");
       setShowModal(true);
+      setNameErrorState(true);
+      setCommentErrorState(true);
       return;
     } else if (!comment) {
-      // alert("please fill in the comment field");
       setErrorMessage("please fill in the comment field");
       setShowModal(true);
+      setCommentErrorState(true);
       return;
     } else if (!name) {
-      // alert("please fill in the name field");
       setErrorMessage("please fill in the name field");
       setShowModal(true);
+      setNameErrorState(true);
       return;
     }
     try {
@@ -48,9 +48,9 @@ const Form = ({ baseURL, photoID, fetchPhoto, fetchComments }) => {
         { name, comment }
       );
 
-      console.log("HandleSubmit Ran");
       fetchComments();
-      // return response;
+      setName("");
+      setComment("");
     } catch (error) {
       console.log(error);
     }
@@ -59,9 +59,14 @@ const Form = ({ baseURL, photoID, fetchPhoto, fetchComments }) => {
   return (
     <>
       <form method="post" onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="name"></label>
+        <div className="form__input-wrapper">
+          <label className="form__label" htmlFor="name">
+            Name
+          </label>
           <input
+            className={`form__text-input ${
+              nameErrorState ? "form__text-input--error" : ""
+            }`}
             type="text"
             name="name"
             id="name"
@@ -69,9 +74,14 @@ const Form = ({ baseURL, photoID, fetchPhoto, fetchComments }) => {
             value={name}
           />
         </div>
-        <div>
-          <label htmlFor="comment"></label>
+        <div className="form__input-wrapper">
+          <label className="form__label" htmlFor="comment">
+            Comment
+          </label>
           <textarea
+            className={`form__text-input ${
+              commentErrorState ? "form__text-input--error" : ""
+            }`}
             type="text"
             name="comment"
             id="comment"
@@ -79,7 +89,7 @@ const Form = ({ baseURL, photoID, fetchPhoto, fetchComments }) => {
             value={comment}
           />
         </div>
-        <button type="submit" onClick={handleSubmit}>
+        <button className="form__button" type="submit" onClick={handleSubmit}>
           Submit
         </button>
       </form>
