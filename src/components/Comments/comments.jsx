@@ -5,20 +5,17 @@ import { useParams } from "react-router-dom";
 
 const Comments = ({ name, timestamp, comment }) => {
   const { id } = useParams();
-  useEffect(() => {
-    // first;
-    // return () => {
-    // second;
-    // };
-  }, []);
+  useEffect(() => {}, []);
 
   return (
     <>
-      <div className="comment__wrapper">
+      <div className="comment">
         {/* Number of Comments */}
-        {name}
-        {timestamp}
-        {comment}
+        <div className="comment__data-wrapper">
+          <p>{name}</p>
+          <p>{timestamp}</p>
+        </div>
+        <div class="comment__body">{comment}</div>
       </div>
     </>
   );

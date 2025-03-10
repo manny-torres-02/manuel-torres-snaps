@@ -3,16 +3,21 @@
 
 .gallery {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: space-between;
   max-width: 100%;
   padding: 0 16px 48px 16px;
+  
+  @include tablet{
+    flex-direction: row; 
+    
+  }
 
   &__link {
     width: 300px;
     height: 300px;
-    // TODO: figure out how to remove the link styling...
     text-decoration: none;
     color: inherit;
     @include tablet {
