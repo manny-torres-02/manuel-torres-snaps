@@ -70,6 +70,7 @@
     }
   }
   &__metadata {
+    font-size: 16px;
   }
   &__tag-wrapper {
     display: flex;
@@ -98,16 +99,18 @@
 }
 
 .photoPageCard {
+  font-family: $outfit;
   background-color: $sage;
   border-radius: 25px;
   border: 1px solid $seaGreen;
   width: 300px;
-  // height: 300px;
-  margin-bottom: 24px;
-  border-radius: 8px 8px 0 0;
+  border-radius: 8px;
+  margin-bottom: 16px;
 
   @include tablet {
     border-radius: 12px;
+    width: inherit;
+    height: 600px;
   }
 
   @include desktop {
@@ -140,35 +143,16 @@
 
     @include tablet {
       border-radius: 8px 8px 0 0;
-    }
-  }
-
-  &__photographer {
-    background-color: #e4efec;
-    font-family: $outfit;
-    width: 100px;
-    height: 25px;
-    top: -30px;
-    position: relative;
-    margin: 0 0 0 auto;
-    border-bottom: 0.5px solid #1e6655;
-    text-align: end;
-    line-height: 25px;
-    border-radius: 5px 0 0 0;
-    padding-right: 8px;
-    @include tablet {
-      max-width: 100%;
-      font-size: $small-body-font-size;
-      top: -28.5px;
+      height: 80%;
     }
   }
 
   &__tag-wrapper {
     display: flex;
-    // margin: auto;
-    margin: 0 12px 0 12px;
-    position: relative;
-    bottom: 20px;
+
+    @include tablet {
+      padding-top: 18px;
+    }
   }
 
   &__tags {
@@ -180,12 +164,63 @@
     font-family: $outfit;
 
     @include tablet {
-      font-size: 12px;
+      // font-size: 12px;
+      font-size: 20px;
+      padding: 10px 12px;
     }
   }
 
   .nonClickable {
     color: black;
     border: 1px solid $seaGreen;
+  }
+  &__data-wrapper {
+    display: flex;
+    flex-direction: row;
+  }
+  &__data {
+    font-family: $outfit;
+    padding: 8px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+    & * {
+      padding-right: 8px;
+    }
+
+    @include tablet {
+      align-items: center;
+    }
+  }
+  &__likes {
+    display: flex;
+    justify-content: center;
+    margin-right: 25%;
+    order: 1;
+
+    @include tablet {
+      margin-right: 0;
+    }
+  }
+
+  &__timestamp {
+    // width: 50%;
+    margin-right: 8px;
+    @include tablet {
+      order: 3;
+    }
+  }
+  &__photographer {
+    background-color: #e4efec;
+    font-family: $outfit;
+    // padding: 0 8px;
+    padding-right: 8px;
+    // width: 100%;
+    @include tablet {
+      margin: 0;
+      order: 2;
+    }
   }
 }

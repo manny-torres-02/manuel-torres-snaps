@@ -1,4 +1,5 @@
 import "./Card.scss";
+import LikeOutline from "../../assets/images/Like_Outline.svg?react";
 import { NavLink, Link } from "react-router-dom";
 import { useParams } from "react-router-dom";
 
@@ -16,6 +17,7 @@ const Card = ({
   showPhotographerNameInCard,
   photoID,
   forPhotoPage,
+  adjustDate,
 }) => {
   const { id } = useParams();
 
@@ -39,7 +41,7 @@ const Card = ({
                   </p>
                 ))}
               {/* TODO: update the styling for all three items */}
-              {showLikes && <p className="card__likes">Likes: {likes}</p>}
+              {showLikes && <p className="card__likes"> {likes} likes</p>}
               {showTimeStamp && <p className="card__timestamp"> {timestamp}</p>}
               {showPhotographerNameInCard && (
                 <p className=""> {photographer}</p>
@@ -49,12 +51,11 @@ const Card = ({
         </div>
       ) : (
         <div className={`photoPageCard `}>
-          {/* <Link className="gallery__link" to={`/Photos/${photoID}`}> */}
-          <img className="card__image" src={photo} alt={photoDescription} />
-          {/* </Link> */}
-          {/* {showPhotographerNameInCard === false && ( */}
-          <p className="photoPageCard__photographer"> {photographer}</p>
-          {/* )} */}
+          <img
+            className="photoPageCard__image"
+            src={photo}
+            alt={photoDescription}
+          />
           <div className="photoPageCard__metadata">
             <div className="photoPageCard__tag-wrapper">
               {tags &&
@@ -63,11 +64,29 @@ const Card = ({
                     {tag}
                   </p>
                 ))}
-              {/* TODO: update the styling for all three items */}
             </div>
-            {showLikes && <p className="card__likes">Likes: {likes}</p>}
-            {showTimeStamp && <p className="card__timestamp"> {timestamp}</p>}
-            {showPhotographerNameInCard && <p className=""> {photographer}</p>}
+            {/* <div className="photoPageCard__data-wrapper"> */}
+            <div className="photoPageCard__data">
+              {showLikes && (
+                <p className="photoPageCard__likes">
+                  <LikeOutline />
+                  {likes} likes
+                </p>
+              )}
+              {showTimeStamp && (
+                <p className="photoPageCard__timestamp">
+                  {adjustDate(timestamp)}
+                </p>
+              )}
+
+              <p className="photoPageCard__photographer">
+                Photo by: {photographer}
+              </p>
+            </div>
+            {/* </div> */}
+            {/* {showPhotographerNameInCard && (
+             
+            )} */}
           </div>
         </div>
       )}
