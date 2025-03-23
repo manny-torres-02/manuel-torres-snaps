@@ -2,7 +2,6 @@ import React from "react";
 import "./modal.scss";
 
 const Modal = ({ errorMessage, showModal, close }) => {
-  // check the status of the modal and do not show it if it is false
   if (!showModal || showModal === false) {
     return null;
   }

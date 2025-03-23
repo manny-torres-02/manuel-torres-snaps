@@ -23,13 +23,12 @@ const PhotoPage = () => {
     const day = String(date.getDate()).padStart(2, "0"); //padstring to properly show the date if needed.
     const year = String(date.getUTCFullYear());
     let placeholder = month + "/" + day + "/" + year;
-    console.log(placeholder);
-    // return date.toLocaleDateString;
     return placeholder;
   };
 
   const fetchComments = async () => {
     let data;
+    // TODO: Refactor this, why amy i repeating this?
     const adjustDate = (item) => {
       const date = new Date(item);
       // months are 0 indexed
@@ -37,14 +36,12 @@ const PhotoPage = () => {
       const day = String(date.getDate()).padStart(2, "0"); //padstring to properly show the date if needed.
       const year = String(date.getUTCFullYear());
       let placeholder = month + "/" + day + "/" + year;
-      console.log(placeholder);
       return placeholder;
     };
 
     try {
-      const response = await axios.get(
-        `${baseURL}photos/${id}/comments?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`
-      );
+      const response = await axios.get(`${baseURL}photos/${id}/comments`);
+      // conos;
       data = response.data;
       setCommentsLength(data.length);
       data.sort((a, b) => {
@@ -64,7 +61,6 @@ const PhotoPage = () => {
   const fetchPhoto = async () => {
     try {
       const response = await axios.get(`${baseURL}photos/${id}`);
-      console.log(baseURL);
       setPhotoData(response.data);
     } catch (error) {
       console.log(error);

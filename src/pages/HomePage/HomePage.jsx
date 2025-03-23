@@ -10,8 +10,6 @@ import Footer from "../../components/Footer/Footer";
 const HomePage = () => {
   const [showTags, setShowTags] = useState(false);
   const [selectedTag, setSelectedTag] = useState(null);
-  //
-
   const baseURL = "http://localhost:8080/";
   const key = "3b75373b-9ad0-47af-bd5d-707946328244";
 
@@ -22,16 +20,8 @@ const HomePage = () => {
       setSelectedTag(null);
     }
   }
-
+// TODO: remove this? 
   useEffect(() => {
-    //function to pull the key
-    // const fetchKey = async () => {
-    //   try {
-    //     const response = await axios.get(`${baseURL}register`);
-    //     console.log(response);
-    //   } catch (error) {
-    //     console.log(error);
-    //   }
   }, []);
 
   return (

@@ -24,7 +24,7 @@ const Form = ({ baseURL, photoID, fetchPhoto, fetchComments }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // BREAK IF THE STATEMENT AGREES
+    // Send the error message if one of the following conditions is met and break out the statements 
     if (!name && !comment) {
       setErrorMessage("please fill in the name and the comment fields");
       setShowModal(true);

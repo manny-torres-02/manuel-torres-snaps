@@ -11,41 +11,41 @@ Currently, two official plugins are available:
 
 ## Functional Requirements
 
-- [ ] **Routing**
+- [x] **Routing**
   - [x] Two routes:
     - [x] Home page route displaying all photos with filtering
-    - [ ] Individual photo route showing single photo + info
-    - [ ] Dynamically set up photo ids 
-- [ ] **Navigation**
+    - [x] Individual photo route showing single photo + info
+    - [x] Dynamically set up photo ids 
+- [x] **Navigation**
   - [x] Clicking logo links to home page
-  - [ ] Clicking photo on home page navigates to its individual page
-- [ ] **Comments**
-  - [ ] Submitted comments appear at top of comment list
-  - [ ] Comments persist through page refresh
+  - [x] Clicking photo on home page navigates to its individual page
+- [x] **Comments**
+  - [x] Submitted comments appear at top of comment list
+  - [x] Comments persist through page refresh
 
 ## Visual Design Requirements
 
-- [ ] **Responsiveness**
-  - [ ] Site responsive at/between breakpoints
-  - [ ] Closely matches design mockups
-- [ ] **SVG Handling**
-  - [ ] Use inline SVGs for color-changing elements
-  - [ ] Proper path/fill color changes in SVGs
+- [x] **Responsiveness**
+  - [x] Site responsive at/between breakpoints
+  - [x] Closely matches design mockups
+- [x] **SVG Handling**
+  - [x] Use inline SVGs for color-changing elements
+  - [x] Proper path/fill color changes in SVGs
 
 ## Implementation Requirements
 
-- [ ] **Project Structure**
+- [x] **Project Structure**
   - [x] Follows specified folder structure/naming conventions
   - [x] Uses provided assets
-- [ ] **React Implementation**
+- [x] **React Implementation**
   - [x] Uses multiple React function components
   - [x] Implements react-router-dom with multiple routes
-- [ ] **Styling**
-  - [ ] Uses SASS variables
-  - [ ] Follows BEM class naming
-  - [ ] Uses Flexbox for layouts
-- [ ] **Data Handling**
-  - [ ] Fetches data from mock API using axios
-- [ ] **Forms**
-  - [ ] Comment form uses controlled inputs
-  - [ ] Form validation prevents submission with empty fields
+- [x] **Styling**
+  - [x] Uses SASS variables
+  - [x] Follows BEM class naming
+  - [x] Uses Flexbox for layouts
+- [x] **Data Handling**
+  - [x] Fetches data from mock API using axios
+- [x] **Forms**
+  - [x] Comment form uses controlled inputs
+  - [x] Form validation prevents submission with empty fields
