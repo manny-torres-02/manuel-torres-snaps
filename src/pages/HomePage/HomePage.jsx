@@ -12,7 +12,7 @@ const HomePage = () => {
   const [selectedTag, setSelectedTag] = useState(null);
   //
 
-  const baseURL = "https://unit-3-project-c5faaab51857.herokuapp.com/";
+  const baseURL = "http://localhost:8080/";
   const key = "3b75373b-9ad0-47af-bd5d-707946328244";
 
   function handleFilterClick() {

@@ -28,9 +28,11 @@ const Gallery = ({ baseURL, selectedTag, showFiltered, showTags }) => {
     //   }
     const fetchPhotoData = async () => {
       try {
-        const fetchData = await axios.get(
-          `${baseURL}photos/?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`
-        );
+        console.log("fetchPhotoDatais called");
+        // const fetchData = await axios.get(`${baseURL}photo`);
+        const fetchData = await axios.get("http://localhost:8080/photos");
+
+        console.log(fetchData);
         // console.log("this is from the call", fetchData.data);
         data = fetchData.data;
         setPhotoData(fetchData.data);

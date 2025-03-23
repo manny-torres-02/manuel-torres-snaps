@@ -17,7 +17,6 @@ function App() {
     if (showTags === true) {
       setSelectedTag(null);
     }
-    console.log("test");
   }
 
   function selectTag() {}
@@ -30,7 +29,6 @@ function App() {
           <Route path="/Photos/:id" element={<PhotoPage />} />
         </Routes>
       </BrowserRouter>
-
     </>
   );
 }

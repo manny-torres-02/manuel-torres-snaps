@@ -14,7 +14,7 @@ const PhotoPage = () => {
   const [photoComments, setPhotoComments] = useState([]);
   const [headerIcon, setHeaderIcon] = useState(true);
   const [commentsLength, setCommentsLength] = useState(0);
-  const baseURL = "https://unit-3-project-c5faaab51857.herokuapp.com/";
+  const baseURL = "http://localhost:8080/";
 
   const adjustDate = (item) => {
     const date = new Date(item);
@@ -27,6 +27,7 @@ const PhotoPage = () => {
     // return date.toLocaleDateString;
     return placeholder;
   };
+
   const fetchComments = async () => {
     let data;
     const adjustDate = (item) => {
@@ -62,9 +63,8 @@ const PhotoPage = () => {
 
   const fetchPhoto = async () => {
     try {
-      const response = await axios.get(
-        `${baseURL}photos/${id}?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`
-      );
+      const response = await axios.get(`${baseURL}photos/${id}`);
+      console.log(baseURL);
       setPhotoData(response.data);
     } catch (error) {
       console.log(error);
