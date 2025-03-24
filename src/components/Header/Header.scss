@@ -41,6 +41,7 @@
   &__button {
     display: flex;
     align-items: center;
+    justify-content: center;
     font-family: v.$outfit;
     background-color: v.$pistachio;
     color: v.$forestGreen;
@@ -56,6 +57,7 @@
       font-size: 18px;
     }
   }
+
 
   &__icon-home {
     padding: 0 8px 0 0;

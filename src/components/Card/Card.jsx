@@ -35,10 +35,13 @@ const Card = ({
               alt={photo.photoDescription}
             />
           </Link>
-          {showPhotographerNameInCard === false && (
+          {/* {showPhotographerNameInCard && (
             <p className="card__photographer"> {photographer}</p>
+            
+          )} */}
+          {showPhotographerNameInCard && (
+            <p className="card__photographer"> {photo.photographer}</p>
           )}
-
           <div>
             <div className="card__tag-wrapper">
               {photo.tags &&
@@ -47,16 +50,16 @@ const Card = ({
                     {tag}
                   </p>
                 ))}
-              {showLikes && <p className="card__likes"> {photo.likes} likes</p>}
-              {showTimeStamp && (
-                <p className="card__timestamp">
+              {/* {showLikes && <p className="card__likes"> {photo.likes} likes</p>} */}
+              {/* {showTimeStamp && ( */}
+              {/* <p className="card__timestamp">
                   {" "}
                   {adjustDate(photo.timestamp)}
                 </p>
-              )}
-              {showPhotographerNameInCard && (
-                <p className=""> {photo.photographer}</p>
-              )}
+              )} */}
+              {/* {showPhotographerNameInCard && (
+                <p className="card__photographer"> {photo.photographer}</p>
+              )} */}
             </div>
           </div>
         </div>
