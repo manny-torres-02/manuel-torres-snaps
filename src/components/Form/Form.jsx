@@ -15,37 +15,55 @@ const Form = ({
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
   const [showModal, setShowModal] = useState(false);
-  const [errorMessage, setErrorMessage] = useState("");
-  const [nameErrorState, setNameErrorState] = useState(false);
   const [commentErrorState, setCommentErrorState] = useState(false);
 
   const nameUpdate = (e) => {
     setName(e.target.value);
+
+    if (nameErrorState) {
+      setNameErrorState(false);
+    }
   };
 
   const commentUpdate = (e) => {
     setComment(e.target.value);
+
+    if (commentErrorState) {
+      setCommentErrorState(false);
+    }
   };
 
+  const getErrorMessage = (name, comment) => {
+    if (!name && !comment) {
+      return "Please fill in the name and the comment fields";
+    } else if (!comment) {
+      return "Please fill in the comment field";
+    } else if (!formState.name) {
+      return "Please fill in the name field";
+    }
+    return "";
+  };
+
+  const nameAndComment = "Please fill in the name and the comment fields";
+  const commentMissing = "Please fill in the comment field";
+  const nameMissing = "Please fill in the name field";
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Send the error message if one of the following conditions is met and break out the statements
     if (!name && !comment) {
       // TODO: Remove teh set Error Message and coresponding state
-      setErrorMessage("please fill in the name and the comment fields");
+      // setErrorMessage("Please fill in the name and the comment fields");
       setShowModal(true);
-      setNameErrorState(true);
-      setCommentErrorState(true);
       return;
     } else if (!comment) {
-      setErrorMessage("please fill in the comment field");
+      // setErrorMessage("please fill in the comment field");
       setShowModal(true);
-      setCommentErrorState(true);
+      // setCommentErrorState(true);
       return;
     } else if (!name) {
-      setErrorMessage("please fill in the name field");
+      // setErrorMessage("please  in the name field");
       setShowModal(true);
-      setNameErrorState(true);
+      // setNameErrorState(true);
       return;
     }
 
@@ -69,7 +87,7 @@ const Form = ({
           </label>
           <input
             className={`form__text-input ${
-              nameErrorState ? "form__text-input--error" : ""
+              commentErrorState ? "form__text-input--error" : ""
             }`}
             type="text"
             name="name"
@@ -100,7 +118,7 @@ const Form = ({
 
       <Modal
         showModal={showModal}
-        errorMessage={errorMessage}
+        errorMessage={getErrorMessage()}
         close={() => setShowModal(false)}
       />
     </>

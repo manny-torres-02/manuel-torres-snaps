@@ -9,8 +9,7 @@ const Modal = ({ errorMessage, showModal, close }) => {
   return (
     <div className="modal__overlay">
       <div className="modal__text">
-        <h2>Form fields are not filled in correctly</h2>
-        <p>{errorMessage}</p>
+        <h2>Please double check the form fields and make sure they are filled in correctly</h2>
         <button className="modal-close-button"onClick={close}> close</button>
       </div>
 

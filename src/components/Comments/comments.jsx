@@ -10,7 +10,6 @@ const Comments = ({ name, timestamp, comment }) => {
   return (
     <>
       <div className="comment">
-        {/* Number of Comments */}
         <div className="comment__data-wrapper">
           <p>{name}</p>
           <p>{timestamp}</p>
