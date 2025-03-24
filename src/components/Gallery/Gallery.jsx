@@ -19,6 +19,7 @@ const Gallery = ({ baseURL, selectedTag, showFiltered, showTags }) => {
     const fetchPhotoData = async () => {
       try {
         const fetchData = await axios.get(`${baseURL}photos`);
+        console.log(fetchData);
         data = fetchData.data;
         setPhotoData(fetchData.data);
       } catch (error) {
@@ -29,24 +30,21 @@ const Gallery = ({ baseURL, selectedTag, showFiltered, showTags }) => {
     fetchPhotoData();
   }, []);
 
+  console.log("this is the photoData:", photoData);
+
   return (
     <>
       <div className={`gallery ${showFiltered ? "gallery__with-filters" : ""}`}>
         {filteredImages.map((photoData) => (
           <div className="card-wrapper" key={photoData.id}>
             <Card
-              photoID={photoData.id}
-              showFiltered={showFiltered}
-              photo={photoData.photo}
-              photoDescription={photoData.photoDescription}
-              photographer={photoData.photographer}
-              likes={photoData.likes}
-              timestamp={photoData.timestamp}
-              tags={photoData.tags}
-              comments={photoData.comments}
-              showLikes={false}
-              showTimeStamp={false}
-              showPhotographerNameInCard={false}
+              // adjustDate={adjustDate}
+              showFiltered={false}
+              photo={photoData}
+              showLikes={true}
+              showTimeStamp={true}
+              showPhotographerNameInCard={true}
+              forPhotoPage={false}
             />
           </div>
         ))}

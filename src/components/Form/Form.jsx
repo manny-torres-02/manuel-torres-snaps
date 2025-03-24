@@ -4,7 +4,13 @@ import axios from "axios";
 import Modal from "../Modal/Modal";
 import "./Form.scss";
 
-const Form = ({ baseURL, photoID, fetchPhoto, fetchComments }) => {
+const Form = ({
+  baseURL,
+  photoID,
+  fetchPhoto,
+  fetchComments,
+  setRefreshComments,
+}) => {
   const { id } = useParams();
   const [name, setName] = useState("");
   const [comment, setComment] = useState("");
@@ -23,9 +29,9 @@ const Form = ({ baseURL, photoID, fetchPhoto, fetchComments }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    // Send the error message if one of the following conditions is met and break out the statements 
+    // Send the error message if one of the following conditions is met and break out the statements
     if (!name && !comment) {
+      // TODO: Remove teh set Error Message and coresponding state
       setErrorMessage("please fill in the name and the comment fields");
       setShowModal(true);
       setNameErrorState(true);
@@ -42,15 +48,13 @@ const Form = ({ baseURL, photoID, fetchPhoto, fetchComments }) => {
       setNameErrorState(true);
       return;
     }
-    try {
-      const response = await axios.post(
-        `${baseURL}photos/${id}/comments?api_key=71e72653-f4b0-4ace-9453-cd4c8c9a9ccf`,
-        { name, comment }
-      );
 
-      fetchComments();
+    try {
+      await axios.post(`${baseURL}photos/${id}/comments`, { name, comment });
+      setRefreshComments((prev) => !prev);
       setName("");
       setComment("");
+      await fetchComments();
     } catch (error) {
       console.log(error);
     }

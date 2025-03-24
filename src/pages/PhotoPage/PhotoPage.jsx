@@ -11,9 +11,10 @@ import "./PhotoPage.scss";
 const PhotoPage = () => {
   const { id } = useParams();
   const [photoData, setPhotoData] = useState(null);
-  const [photoComments, setPhotoComments] = useState([]);
+  const [photoComments, setPhotoComments] = useState(null);
   const [headerIcon, setHeaderIcon] = useState(true);
-  const [commentsLength, setCommentsLength] = useState(0);
+  const [refreshComments, setRefreshComments] = useState(false);
+
   const baseURL = "http://localhost:8080/";
 
   const adjustDate = (item) => {
@@ -26,50 +27,30 @@ const PhotoPage = () => {
     return placeholder;
   };
 
-  const fetchComments = async () => {
-    let data;
-    // TODO: Refactor this, why amy i repeating this?
-    const adjustDate = (item) => {
-      const date = new Date(item);
-      // months are 0 indexed
-      const month = String(date.getUTCMonth() + 1);
-      const day = String(date.getDate()).padStart(2, "0"); //padstring to properly show the date if needed.
-      const year = String(date.getUTCFullYear());
-      let placeholder = month + "/" + day + "/" + year;
-      return placeholder;
-    };
-
+  const fetchPhotoPlusComments = async () => {
     try {
-      const response = await axios.get(`${baseURL}photos/${id}/comments`);
-      // conos;
-      data = response.data;
-      setCommentsLength(data.length);
-      data.sort((a, b) => {
-        return b.timestamp - a.timestamp;
-      });
-      const formatDate = data.map((comment) => ({
+      const photoResp = await axios.get(`${baseURL}photos/${id}`);
+      const commentsResp = await axios.get(`${baseURL}photos/${id}/comments`);
+
+      commentsResp.data.sort(
+        (a, b) => new Date(b.timestamp) - new Date(a.timestamp)
+      );
+
+      const formattedComments = commentsResp.data.map((comment) => ({
         ...comment,
         timestamp: adjustDate(comment.timestamp),
       }));
-      console.log(formatDate);
-      setPhotoComments(formatDate);
+
+      setPhotoData(photoResp);
+      setPhotoComments(formattedComments);
     } catch (error) {
       console.log(error);
     }
   };
 
-  const fetchPhoto = async () => {
-    try {
-      const response = await axios.get(`${baseURL}photos/${id}`);
-      setPhotoData(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
   useEffect(() => {
-    fetchPhoto();
-    fetchComments();
-  }, [commentsLength]);
+    fetchPhotoPlusComments();
+  }, [refreshComments]);
 
   if (!photoData) {
     return <div>Loading...</div>;
@@ -81,27 +62,24 @@ const PhotoPage = () => {
       <div className="photoPageCardWrapper">
         <div className="wrapper">
           <Card
-            photoID={photoData.id}
-            photo={photoData.photo}
-            photoDescription={photoData.photoDescription}
-            photographer={photoData.photographer}
-            tags={photoData.tags}
-            timestamp={photoData.timestamp}
-            comments={photoData.comments}
-            likes={photoData.likes}
+            showFiltered={false}
+            photo={photoData.data}
             showLikes={true}
             showTimeStamp={true}
             showPhotographerNameInCard={true}
             forPhotoPage={true}
-            adjustDate={adjustDate}
           />
-          <Form baseURL={baseURL} fetchComments={fetchComments} />
-          <p> {commentsLength} comments</p>
+          <Form
+            baseURL={baseURL}
+            fetchComments={fetchPhotoPlusComments}
+            setRefreshComments={setRefreshComments}
+          />
+          <p> {photoComments.length} comments</p>
           {photoComments.map((comment) => (
             <Comments
               key={comment.id}
               name={comment.name}
-              timestamp={comment.timestamp}
+              timestamp={adjustDate(comment.timestamp)}
               comment={comment.comment}
             />
           ))}
