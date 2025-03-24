@@ -16,6 +16,7 @@ const Form = ({
   const [comment, setComment] = useState("");
   const [showModal, setShowModal] = useState(false);
   const [commentErrorState, setCommentErrorState] = useState(false);
+  const [nameErrorState, setNameErrorState] = useState(false);
 
   const nameUpdate = (e) => {
     setName(e.target.value);
@@ -34,11 +35,11 @@ const Form = ({
   };
 
   const getErrorMessage = (name, comment) => {
-    if (!name && !comment) {
+    if (nameErrorState && commentErrorState) {
       return "Please fill in the name and the comment fields";
-    } else if (!comment) {
+    } else if (commentErrorState) {
       return "Please fill in the comment field";
-    } else if (!formState.name) {
+    } else if (nameErrorState) {
       return "Please fill in the name field";
     }
     return "";
@@ -54,16 +55,18 @@ const Form = ({
       // TODO: Remove teh set Error Message and coresponding state
       // setErrorMessage("Please fill in the name and the comment fields");
       setShowModal(true);
+      setCommentErrorState(true);
+      setNameErrorState(true);
       return;
     } else if (!comment) {
       // setErrorMessage("please fill in the comment field");
       setShowModal(true);
-      // setCommentErrorState(true);
+      setCommentErrorState(true);
       return;
     } else if (!name) {
       // setErrorMessage("please  in the name field");
       setShowModal(true);
-      // setNameErrorState(true);
+      setNameErrorState(true);
       return;
     }
 
@@ -87,7 +90,7 @@ const Form = ({
           </label>
           <input
             className={`form__text-input ${
-              commentErrorState ? "form__text-input--error" : ""
+              nameErrorState ? "form__text-input--error" : ""
             }`}
             type="text"
             name="name"

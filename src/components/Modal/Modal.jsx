@@ -9,10 +9,16 @@ const Modal = ({ errorMessage, showModal, close }) => {
   return (
     <div className="modal__overlay">
       <div className="modal__text">
-        <h2>Please double check the form fields and make sure they are filled in correctly</h2>
-        <button className="modal-close-button"onClick={close}> close</button>
+        <h2>
+          Please double check the form fields and make sure they are filled in
+          correctly
+        </h2>
+        <p>{errorMessage}</p>
+        <button className="modal-close-button" onClick={close}>
+          {" "}
+          close
+        </button>
       </div>
-
     </div>
   );
 };
